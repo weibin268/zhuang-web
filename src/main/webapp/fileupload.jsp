@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>a
-	<form method="POST" enctype="multipart/form-data" action="FileUploadServlet">
+	<form method="POST" enctype="multipart/form-data" action="FileUploadTestServlet">
 		File to upload: <input type="file" name="upfile"><br /> Notes
 		about the file: <input type="text" name="note"><br /> <br /> <input
 			type="submit" value="Press"> to upload the file!
