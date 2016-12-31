@@ -70,12 +70,6 @@ public class HttpClient {
 			connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
 
 			connection.connect();
-
-			Map<String, List<String>> map = connection.getHeaderFields();
-
-			for (String key : map.keySet()) {
-				System.out.println(key + "--->" + map.get(key));
-			}
 			
 			in = new BufferedReader(new InputStreamReader(connection.getInputStream(), charsetName));
 			String line;

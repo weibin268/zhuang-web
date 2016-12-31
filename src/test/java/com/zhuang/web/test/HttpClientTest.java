@@ -11,7 +11,7 @@ public class HttpClientTest {
 	{
 		HttpClient httpClient=new HttpClient("http://www.baidu.com");
 		
-		System.out.println(httpClient.sendGet("", ""));
+		System.out.println(httpClient.sendPost("", ""));
 		
 	}
 	
