@@ -13,13 +13,21 @@ public class HttpClient {
 
 	private String baseUrl;
 
-	public HttpClient() {
+	private String charsetName="utf-8";
 
+	public HttpClient() {
+		
 	}
 
 	public HttpClient(String baseUrl) {
 		this.baseUrl = baseUrl;
 	}
+	
+	public HttpClient(String baseUrl,String charsetName) {
+		this.baseUrl = baseUrl;
+		this.charsetName=charsetName;
+	}
+	
 
 	private String getFullUrl(String url) {
 
@@ -74,7 +82,9 @@ public class HttpClient {
 				System.out.println(key + "--->" + map.get(key));
 			}
 			// 定义 BufferedReader输入流来读取URL的响应
-			in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			
+			
+			in = new BufferedReader(new InputStreamReader(connection.getInputStream(),charsetName));
 			String line;
 			while ((line = in.readLine()) != null) {
 				result += line;
@@ -130,7 +140,7 @@ public class HttpClient {
 			// flush输出流的缓冲
 			out.flush();
 			// 定义BufferedReader输入流来读取URL的响应
-			in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			in = new BufferedReader(new InputStreamReader(conn.getInputStream(),charsetName));
 			String line;
 			while ((line = in.readLine()) != null) {
 				result += line;

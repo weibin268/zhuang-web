@@ -6,4 +6,13 @@ import com.zhuang.web.http.HttpClient;
 
 public class HttpClientTest {
 
+	@Test
+	public void testSendGet()
+	{
+		HttpClient httpClient=new HttpClient("http://www.baidu.com");
+		
+		System.out.println(httpClient.sendGet("", ""));
+		
+	}
+	
 }
