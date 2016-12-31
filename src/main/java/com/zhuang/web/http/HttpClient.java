@@ -9,6 +9,10 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author zwb
+ *
+ */
 public class HttpClient {
 
 	private String baseUrl;
@@ -55,7 +59,8 @@ public class HttpClient {
 
 			url = getFullUrl(url);
 
-			String urlNameString = url + "?" + param;
+			String urlNameString = url + ((param == null || param == "") ? "" : "?" + param);
+
 			URL realUrl = new URL(urlNameString);
 
 			URLConnection connection = realUrl.openConnection();
@@ -111,7 +116,9 @@ public class HttpClient {
 			conn.setDoOutput(true);
 			conn.setDoInput(true);
 
-			conn.getOutputStream().write(param.getBytes(charsetName));
+			if (param != null && param != "") {
+				conn.getOutputStream().write(param.getBytes(charsetName));
+			}
 
 			in = new BufferedReader(new InputStreamReader(conn.getInputStream(), charsetName));
 			String line;
@@ -136,4 +143,21 @@ public class HttpClient {
 		return result;
 	}
 
+	public String sendGet(String url,  Map<String, String> param) throws Exception {
+		return sendGet(url, ParamConvert.toString(param));
+	}
+
+	public String sendPost(String url, Map<String, String> param) throws Exception {
+		return sendPost(url, ParamConvert.toString(param));
+	}
+
+	public String sendGet(String url) throws Exception {
+		return sendGet(url, "");
+	}
+
+	public String sendPost(String url) throws Exception {
+		return sendPost(url, "");
+	}
+
+		
 }
