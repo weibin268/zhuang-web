@@ -10,8 +10,38 @@
   	<description></description>
   	<servlet-class>com.zhuang.web.test.FileUploadTestServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>WorkflowEngineServlet</servlet-name>
+  	<display-name>WorkflowEngineServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.zhuang.web.workflow.WorkflowEngineServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>WorkflowDeploymentServlet</servlet-name>
+  	<display-name>WorkflowDeploymentServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.zhuang.web.workflow.WorkflowDeploymentServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>WorkflowQueryServlet</servlet-name>
+  	<display-name>WorkflowQueryServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.zhuang.web.workflow.WorkflowQueryServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FileUploadTestServlet</servlet-name>
   	<url-pattern>/FileUploadTestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WorkflowEngineServlet</servlet-name>
+  	<url-pattern>/wf/engine</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WorkflowDeploymentServlet</servlet-name>
+  	<url-pattern>/wf/deploy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WorkflowQueryServlet</servlet-name>
+  	<url-pattern>/wf/query</url-pattern>
   </servlet-mapping>
 </web-app>
