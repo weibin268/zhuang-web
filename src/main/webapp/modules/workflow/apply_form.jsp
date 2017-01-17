@@ -9,17 +9,51 @@
 <%@ include file="/commons/jslibs.jsp"%>
 
 <script type="text/javascript">
-	
-	$(function(){
-		
-		alert("111");
+	$(function() {
+
+		$("#submit").click(function() {
+			
+			var url=contextPath+"/wf/engine";
+			
+			$.ajax(url, {
+				type : "POST",
+				data : $(document.forms["applyForm"]).serialize(),
+				beforeSend : function() {
+					if (false)
+						return false;
+
+				},
+				complete : function() {
+					
+				},
+				success : function(data, textStatus, jqXHR) {
+					debugger;
+				},
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("XMLHttpRequest.status:"
+							+ XMLHttpRequest.status
+							+ "\nXMLHttpRequest.readyState:"
+							+ XMLHttpRequest.readyState
+							+ "\ntextStatus:" + textStatus);
+				}
+			});
+
+		});
+
 	});
-	
 </script>
 
 </head>
 <body>
 
-	<form action=""></form>
+	<form id="applyForm" name="applyForm" action="">
+		<input id="amount" name="amount" type="text"></input>
+	</form>
+
+	<div>
+		<input type="button" id="submit" value="提交"></input>
+	</div>
+
 </body>
 </html>
