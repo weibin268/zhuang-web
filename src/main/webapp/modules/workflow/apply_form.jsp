@@ -57,22 +57,21 @@
 		<input id="actionType" name="actionType" type="hidden"></input> <input
 			id="amount" name="amount" type="text"></input>
 		<%
-		
 			String defKey = request.getParameter("defKey");
-		
+				
 			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
 					.GetApplicationContext().getBean("workflowFormMappings");
 
-			String formName =defKey;
+			String formName ="";
 			
 			Object objPage = workflowFormMappings.get(defKey);
-			if(objPage!=null)
-			{
-				formName=objPage.toString();
+			if (objPage != null) {
+				formName = objPage.toString();
+			} else {
+				formName = defKey + ".jsp";
 			}
-			
-			String url="/modules/workflow/forms/"+formName;
 
+			String url = "/modules/workflow/forms/" + formName;
 		%>
 			<jsp:include page="<%=url%>"></jsp:include>
 	</form>
