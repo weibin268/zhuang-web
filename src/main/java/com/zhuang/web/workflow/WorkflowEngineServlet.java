@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.zhuang.web.models.MyJsonResult;
 import com.zhuang.web.util.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowEngine;
@@ -35,6 +38,8 @@ public class WorkflowEngineServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		MyJsonResult myJsonResult = new MyJsonResult();
+
 		String defKey = request.getParameter("defKey");
 		String actionType = request.getParameter("actionType");
 		String taskId = request.getParameter("taskId");
@@ -44,31 +49,45 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 		String currentUserId = "zzwwbb";
 
-		WorkflowEngine workflowEngine = WorkflowBeansFactory.getWorkflowEngine();
+		try {
 
-		Map<String, Object> formData = WorkflowUtil.getFormData(request);
+			WorkflowEngine workflowEngine = WorkflowBeansFactory.getWorkflowEngine();
 
-		if (actionType.equals("save")) {
+			Map<String, Object> formData = WorkflowUtil.getFormData(request);
 
-			if (taskId == null || taskId == "") {
-				String[] instValues = workflowEngine.startNew(defKey, currentUserId, bizKey, formData).split("|");
-				String instId = instValues[0];
-				taskId = instValues[1];
+			if (actionType.equals("save")) {
+
+				if (taskId == null || taskId == "") {
+
+					String[] instValues = workflowEngine.startNew(defKey, currentUserId, bizKey, formData).split("|");
+					String instId = instValues[0];
+					taskId = instValues[1];
+					
+				}
+				
+				workflowEngine.save(taskId, comment, formData);
+
+				myJsonResult.setSuccess(true);
+				myJsonResult.setData("taskId");
+				
+			} else if (actionType.equals("submit")) {
+
+				String[] arrNextUsers = nextUserIds.split(",");
+				List<String> nextUsers = Arrays.asList(arrNextUsers);
+
+				workflowEngine.submit(taskId, nextUsers, comment, formData);
+
+			} else if (actionType.equals("back")) {
+
+				workflowEngine.back(taskId, comment, formData);
 
 			}
-			workflowEngine.save(taskId, comment, formData);
-
-		} else if (actionType.equals("submit")) {
-			
-			String[] arrNextUsers = nextUserIds.split(",");
-			List<String> nextUsers = Arrays.asList(arrNextUsers);
-
-			workflowEngine.submit(taskId, nextUsers, comment, formData);
-
-		} else if (actionType.equals("back")) {
-			
-			workflowEngine.back(taskId, comment, formData);
-		
+		} catch (Exception e) {
+			myJsonResult.setSuccess(false);
+			myJsonResult.setMessage(e.getMessage());
+		}finally {
+			Gson gson=new GsonBuilder().create();
+			gson.toJson(myJsonResult,response.getWriter());
 		}
 
 	}
