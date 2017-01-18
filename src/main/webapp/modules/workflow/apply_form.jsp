@@ -57,7 +57,6 @@
 		<input id="actionType" name="actionType" type="hidden"></input> <input
 			id="amount" name="amount" type="text"></input>
 
-
 		<%
 			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil.GetApplicationContext()
 					.getBean("workflowFormMappings");
