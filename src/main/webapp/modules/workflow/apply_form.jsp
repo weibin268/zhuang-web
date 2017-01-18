@@ -20,6 +20,16 @@
 			$actionType.val("submit");
 			doPost();
 		});
+		
+		$("#back").click(function() {
+			$actionType.val("back");
+			doPost();
+		});
+		
+		$("#save").click(function() {
+			$actionType.val("save");
+			doPost();
+		});
 
 	});
 
@@ -54,8 +64,7 @@
 <body>
 
 	<form id="applyForm" name="applyForm" action="">
-		<input id="actionType" name="actionType" type="hidden"></input> <input
-			id="amount" name="amount" type="text"></input>
+		<input id="actionType" name="actionType" type="hidden"></input>
 		<%
 			String defKey = request.getParameter("defKey");
 				
@@ -75,10 +84,17 @@
 		%>
 			<jsp:include page="<%=url%>"></jsp:include>
 	</form>
+	
+	<div>
+	
+		<input id="nextUserIds" name="nextUserIds" type="hidden" value="user1,user2"></input>
+		
+	</div>
 
 	<div>
-		<input type="button" id="save" value="保存"></input> <input
-			type="button" id="submit" value="提交"></input>
+		<input type="button" id="save" value="保存"></input> 
+		<input type="button" id="back" value="退回"></input>
+		<input type="button" id="submit" value="提交"></input>
 	</div>
 
 </body>
