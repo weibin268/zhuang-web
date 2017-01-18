@@ -28,12 +28,16 @@
 		
 		$("#save").click(function() {
 			$actionType.val("save");
-			doPost();
+			doPost(function(data){
+				debugger;
+				alert(data);
+				
+			});
 		});
 
 	});
 
-	function doPost() {
+	function doPost(success) {
 		var url = contextPath + "/wf/engine";
 
 		$.ajax(url, {
@@ -48,7 +52,9 @@
 
 			},
 			success : function(data, textStatus, jqXHR) {
-				debugger;
+				if (success) {
+					success(data);
+				}
 			},
 			error : function(XMLHttpRequest, textStatus, errorThrown) {
 				alert("XMLHttpRequest.status:" + XMLHttpRequest.status
