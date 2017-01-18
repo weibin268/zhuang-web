@@ -1,7 +1,7 @@
 <%@page import="java.util.Map.Entry"%>
 <%@page import="com.zhuang.workflow.util.ApplicationContextUtil"%>
 <%@page import="java.util.Map"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -56,21 +56,30 @@
 	<form id="applyForm" name="applyForm" action="">
 		<input id="actionType" name="actionType" type="hidden"></input> <input
 			id="amount" name="amount" type="text"></input>
-
 		<%
-			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil.GetApplicationContext()
-					.getBean("workflowFormMappings");
 		
-			for(Entry entry:workflowFormMappings.entrySet())
+			String defKey = request.getParameter("defKey");
+		
+			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
+					.GetApplicationContext().getBean("workflowFormMappings");
+
+			String formName =defKey;
+			
+			Object objPage = workflowFormMappings.get(defKey);
+			if(objPage!=null)
 			{
-				response.getOutputStream().println(entry.getValue().toString());
+				formName=objPage.toString();
 			}
+			
+			String url="/modules/workflow/forms/"+formName;
+
 		%>
+			<jsp:include page="<%=url%>"></jsp:include>
 	</form>
 
 	<div>
-		<input type="button" id="save" value="保存"></input>		
-		<input type="button" id="submit" value="提交"></input>
+		<input type="button" id="save" value="保存"></input> <input
+			type="button" id="submit" value="提交"></input>
 	</div>
 
 </body>
