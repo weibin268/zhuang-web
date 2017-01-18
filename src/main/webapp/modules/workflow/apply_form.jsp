@@ -70,7 +70,11 @@
 <body>
 
 	<form id="applyForm" name="applyForm" action="">
+		
 		<input id="actionType" name="actionType" type="hidden"></input>
+		<input id="defKey" name="defKey" type="hidden" value="<%=request.getParameter("defKey") %>"></input>
+		
+		
 		<%
 			String defKey = request.getParameter("defKey");
 				
