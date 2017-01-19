@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.zhuang.web.models.MyJsonResult;
@@ -59,17 +61,19 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 				if (taskId == null || taskId == "") {
 
-					String[] instValues = workflowEngine.startNew(defKey, currentUserId, bizKey, formData).split("\\|");
-					String instId = instValues[0];
-					taskId = instValues[1];
-					
+					String instValues = workflowEngine.startNew(defKey, currentUserId, bizKey, formData);
+					String[] arrInstValues = instValues.split("\\|");
+					String instId = arrInstValues[0];
+					taskId = arrInstValues[1];
+
 				}
 				
 				workflowEngine.save(taskId, comment, formData);
 
 				myJsonResult.setSuccess(true);
-				myJsonResult.setData(taskId);
+				myJsonResult.setData("{taskId:" + taskId + "}");
 				
+
 			} else if (actionType.equals("submit")) {
 
 				String[] arrNextUsers = nextUserIds.split(",");
@@ -83,8 +87,11 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 			}
 		} catch (Exception e) {
+			
 			myJsonResult.setSuccess(false);
 			myJsonResult.setMessage(e.getMessage());
+			myJsonResult.setData(ExceptionUtils.getStackTrace(e));
+		
 		}finally {
 			Gson gson=new GsonBuilder().create();
 			gson.toJson(myJsonResult,response.getWriter());
