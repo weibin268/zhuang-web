@@ -54,14 +54,13 @@
 	<bean id="processDefinitionManager" class="com.zhuang.workflow.activiti.ProcessDefinitionManager">
 	</bean>
 
+	<bean id="processVariablesManager" class="com.zhuang.workflow.activiti.ProcessVariablesManager">
+	</bean>
+
 	<bean id="workflowQueryManager" class="com.zhuang.workflow.impl.ActivitiWorkflowQueryManager"></bean>
 
 	<bean id="userManagementService"
 		class="com.zhuang.workflow.services.impl.BingoUserManagementService"></bean>
-
-	<bean id="activitiTestBean" class="com.zhuang.workflow.test.ActivitiTestBean">
-	</bean>
-
 
 
 	<!-- <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration"> 
