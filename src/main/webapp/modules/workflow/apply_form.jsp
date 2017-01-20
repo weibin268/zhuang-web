@@ -56,10 +56,12 @@
 			doPost(function(data){
 				var objData= eval("("+data+")");
 				if(objData.success){
-					debugger;
 					var objResult=eval("("+ objData.data+")");
-					alert(objResult.taskId);
-					
+					if(objResult.isNew)
+					{
+						var newUrl = window.location.href+"&taskId="+objResult.taskId;
+						location.replace(newUrl);
+					}
 				}else{
 					debugger;
 					alert(objData.message);

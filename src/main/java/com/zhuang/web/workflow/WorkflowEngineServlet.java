@@ -59,20 +59,22 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 			if (actionType.equals("save")) {
 
+				boolean isNew=false;
+				
 				if (taskId == null || taskId == "") {
 
 					String instValues = workflowEngine.startNew(defKey, currentUserId, bizKey, formData);
 					String[] arrInstValues = instValues.split("\\|");
 					String instId = arrInstValues[0];
 					taskId = arrInstValues[1];
-
+					
+					isNew=true;
 				}
 				
 				workflowEngine.save(taskId, comment, formData);
 
 				myJsonResult.setSuccess(true);
-				myJsonResult.setData("{taskId:" + taskId + "}");
-				
+				myJsonResult.setData("{taskId:" + taskId + ",isNew:" + isNew + "}");
 
 			} else if (actionType.equals("submit")) {
 
