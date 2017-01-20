@@ -27,8 +27,9 @@
 	if (taskId != "") {
 
 		WorkflowEngine workflowEngine = WorkflowBeansFactory.getWorkflowEngine();
+	
 		Map<String, Object> formData = workflowEngine.retrieveFormData(taskId);
-
+	
 		for (Entry<String, Object> entry : formData.entrySet()) {
 			request.setAttribute(entry.getKey(), entry.getValue());
 		}
