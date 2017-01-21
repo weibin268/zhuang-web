@@ -127,6 +127,17 @@ $(function(){
 </head>
 <body>
 
+	<div class="navbar">
+		<div class="navbar-inner">
+		<a class="brand" href="#">${proDefName}</a>
+		<div class="btn-group pull-right">
+			<input type="button" id="save" value="保存" class="btn btn-primary"></input>
+			<input type="button" id="back" value="退回" class="btn btn-primary"></input>
+			<input type="button" id="submit" value="提交" class="btn btn-primary"></input>
+			</div>
+		</div>
+	</div>
+
 	<form id="applyForm" name="applyForm" action="">
 		<div>
 			<input id="actionType" name="actionType" type="hidden"></input> <input
@@ -169,18 +180,6 @@ $(function(){
 		
 	</div>
 
-	<div  class="navbar">
-		<input type="button" id="save" value="保存"></input> 
-		<input type="button" id="back" value="退回"></input>
-		<input type="button" id="submit" value="提交"></input>
-	</div>
 
-<div class="navbar">
-  <div class="navbar-inner">
-  	
- 	<a class="brand pull-right" href="#">Project name</a>
-
-  </div>
-</div>
 </body>
 </html>
