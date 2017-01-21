@@ -137,7 +137,7 @@ $(function(){
 			<table> 
 				<tr>
 					<td>标题：</td>
-					<td><input id="env_PROC_TITLE" name="env_PROC_TITLE"
+					<td><input type="text" id="env_PROC_TITLE" name="env_PROC_TITLE"
 						value="${env_PROC_TITLE}"></input></td>
 				</tr>
 			</table>
@@ -169,11 +169,18 @@ $(function(){
 		
 	</div>
 
-	<div>
+	<div  class="navbar">
 		<input type="button" id="save" value="保存"></input> 
 		<input type="button" id="back" value="退回"></input>
 		<input type="button" id="submit" value="提交"></input>
 	</div>
 
+<div class="navbar">
+  <div class="navbar-inner">
+  	
+ 	<a class="brand pull-right" href="#">Project name</a>
+
+  </div>
+</div>
 </body>
 </html>
