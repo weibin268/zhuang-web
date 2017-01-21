@@ -2,4 +2,4 @@
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 
-金额： <input id="env_amount" name="env_amount" type="text" value="${requestScope.amount}"></input>
+金额： <input id="env_amount" name="env_amount" type="text" value="${env_amount}"></input>

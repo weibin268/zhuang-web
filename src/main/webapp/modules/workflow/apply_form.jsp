@@ -57,6 +57,7 @@
 				var objData= eval("("+data+")");
 				if(objData.success){
 					var objResult=eval("("+ objData.data+")");
+					alert("保存成功！");
 					if(objResult.isNew)
 					{
 						var newUrl = window.location.href+"&taskId="+objResult.taskId;
@@ -105,13 +106,21 @@
 <body>
 
 	<form id="applyForm" name="applyForm" action="">
-		
-		<input id="actionType" name="actionType" type="hidden"></input>
-		<input id="defKey" name="defKey" type="hidden" value="<%=request.getParameter("defKey") %>"></input>
-		<input id="taskId" name="taskId" type="hidden" value="<%=taskId %>"></input>
-		
-		<input id="env_PROC_TITLE" name="env_PROC_TITLE" value="${env_PROC_TITLE}"></input> 	
-		
+		<div>
+			<input id="actionType" name="actionType" type="hidden"></input> <input
+				id="defKey" name="defKey" type="hidden"
+				value="<%=request.getParameter("defKey")%>"></input> <input
+				id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
+
+			<table> 
+				<tr>
+					<td>标题：</td>
+					<td><input id="env_PROC_TITLE" name="env_PROC_TITLE"
+						value="${env_PROC_TITLE}"></input></td>
+				</tr>
+			</table>
+
+		</div>
 		<%
 			String defKey = request.getParameter("defKey");
 				
