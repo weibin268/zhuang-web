@@ -1,3 +1,6 @@
+<%@page import="org.activiti.engine.repository.ProcessDefinition"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="com.zhuang.workflow.activiti.ProcessDefinitionManager"%>
 <%@page import="com.zhuang.workflow.WorkflowEngine"%>
 <%@page import="com.zhuang.workflow.WorkflowBeansFactory"%>
 <%@page import="java.util.Map.Entry"%>
@@ -18,22 +21,32 @@
 
 <%
 	String taskId = request.getParameter("taskId");
+	String defKey = request.getParameter("defKey");
 
 	if(taskId==null)
 	{
 		taskId="";	
 	}
 	
+	Map<String, Object> formData = new HashMap<String, Object>();
+
 	if (taskId != "") {
 
 		WorkflowEngine workflowEngine = WorkflowBeansFactory.getWorkflowEngine();
-	
-		Map<String, Object> formData = workflowEngine.retrieveFormData(taskId);
-	
-		for (Entry<String, Object> entry : formData.entrySet()) {
-			request.setAttribute(entry.getKey(), entry.getValue());
-		}
+		formData = workflowEngine.retrieveFormData(taskId);
+
+	} else {
+		ProcessDefinitionManager processDefinitionManager = WorkflowBeansFactory.getProcessDefinitionManager();
+		ProcessDefinition processDefinition = processDefinitionManager.getProcessDefinitionEntityByKey(defKey);
+		formData.put("proDefKey", processDefinition.getKey());
+		formData.put("proDefName", processDefinition.getName());
+
 	}
+	
+	for (Entry<String, Object> entry : formData.entrySet()) {
+		request.setAttribute(entry.getKey(), entry.getValue());
+	}
+	
 %>
 
 <script type="text/javascript">
@@ -142,7 +155,7 @@ $(function(){
 		<div>
 			<input id="actionType" name="actionType" type="hidden"></input> <input
 				id="defKey" name="defKey" type="hidden"
-				value="<%=request.getParameter("defKey")%>"></input> <input
+				value="<%=defKey%>"></input> <input
 				id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
 
 			<table> 
@@ -155,8 +168,6 @@ $(function(){
 
 		</div>
 		<%
-			String defKey = request.getParameter("defKey");
-				
 			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
 					.GetApplicationContext().getBean("workflowFormMappings");
 
