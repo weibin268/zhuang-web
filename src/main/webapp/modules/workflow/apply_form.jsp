@@ -40,16 +40,20 @@
 var isFirstTask = ${isFirstTask};
 var isRunningTask = ${isRunningTask}
 var currentTaskKey="${currentTaskKey}";
+var currentTaskName="${currentTaskName}";
 
+$(function(){
+
+	if (isFirstTask==false || isRunningTask==false) {
+		setFormReadonly();
+	}
+	
+});
 </script>
 
 <script type="text/javascript">
 
 	$(function() {
-		
-		if (isFirstTask==false || isRunningTask==false) {
-			setFormReadonly();
-		}
 		
 		var $actionType = $("#actionType");
 
