@@ -37,39 +37,52 @@
 %>
 
 <script type="text/javascript">
-	$(function() {
+var isFirstTask = ${isFirstTask};
+var isRunningTask = ${isRunningTask}
+var currentTaskKey="${currentTaskKey}";
 
-		var $actionType = $("#actionType");
+</script>
+
+<script type="text/javascript">
+
+	$(function() {
 		
+		if (isFirstTask==false || isRunningTask==false) {
+			setFormReadonly();
+		}
+		
+		var $actionType = $("#actionType");
+
 		$("#submit").click(function() {
 			$actionType.val("submit");
 			doPost();
 		});
-		
+
 		$("#back").click(function() {
 			$actionType.val("back");
 			doPost();
 		});
-		
-		$("#save").click(function() {
-			$actionType.val("save");
-			doPost(function(data){
-				var objData= eval("("+data+")");
-				if(objData.success){
-					var objResult=eval("("+ objData.data+")");
-					alert("保存成功！");
-					if(objResult.isNew)
-					{
-						var newUrl = window.location.href+"&taskId="+objResult.taskId;
-						location.replace(newUrl);
-					}
-				}else{
-					debugger;
-					alert(objData.message);
-				}
 
-			});
-		});
+		$("#save").click(
+				function() {
+					$actionType.val("save");
+					doPost(function(data) {
+						var objData = eval("(" + data + ")");
+						if (objData.success) {
+							var objResult = eval("(" + objData.data + ")");
+							alert("保存成功！");
+							if (objResult.isNew) {
+								var newUrl = window.location.href + "&taskId="
+										+ objResult.taskId;
+								location.replace(newUrl);
+							}
+						} else {
+							debugger;
+							alert(objData.message);
+						}
+
+					});
+				});
 
 	});
 
@@ -99,6 +112,10 @@
 						+ textStatus);
 			}
 		});
+	}
+
+	function setFormReadonly() {
+		$("#applyForm input").attr("disabled", "true")
 	}
 </script>
 

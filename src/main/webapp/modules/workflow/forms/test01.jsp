@@ -7,3 +7,4 @@
 ${env_amount}
 ${isFirstTask}
 ${currentTaskKey}
+${isRunningTask}
