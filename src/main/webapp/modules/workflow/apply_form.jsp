@@ -158,14 +158,24 @@ $(function(){
 				value="<%=defKey%>"></input> <input
 				id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
 
-			<table> 
-				<tr>
-					<td>标题：</td>
-					<td><input type="text" id="env_PROC_TITLE" name="env_PROC_TITLE"
-						value="${env_PROC_TITLE}"></input></td>
-				</tr>
-			</table>
+			<table class="table table-bordered table-condensed">
+				<caption><span class="lead">基本信息</span></caption>
+				<tbody>
+					<tr>
+						<td >标题：</td>
+						<td colspan="3"><input type="text" id="env_PROC_TITLE"
+							name="env_PROC_TITLE" value="${env_PROC_TITLE}"></input></td>
 
+					</tr>
+
+					<tr>
+						<td>申请人：</td>
+						<td>aaaaa</td>
+						<td>申请人部门：</td>
+						<td>bbb</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<%
 			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
