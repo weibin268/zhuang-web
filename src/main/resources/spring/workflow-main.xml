@@ -56,6 +56,13 @@
 
 	<bean id="processVariablesManager" class="com.zhuang.workflow.activiti.ProcessVariablesManager">
 	</bean>
+	
+	<bean id="userTaskManager" class="com.zhuang.workflow.activiti.UserTaskManager">
+	</bean>
+
+	<bean id="processInstanceManager" class="com.zhuang.workflow.activiti.ProcessInstanceManager">
+	</bean>
+
 
 	<bean id="workflowQueryManager" class="com.zhuang.workflow.impl.ActivitiWorkflowQueryManager"></bean>
 
