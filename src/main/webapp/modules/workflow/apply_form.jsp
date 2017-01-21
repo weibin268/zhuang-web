@@ -37,6 +37,7 @@
 %>
 
 <script type="text/javascript">
+
 var isFirstTask = ${isFirstTask};
 var isRunningTask = ${isRunningTask}
 var currentTaskKey="${currentTaskKey}";
