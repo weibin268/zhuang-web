@@ -10,6 +10,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 
+<%@ include file="apply_form_init.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,44 +20,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <%@ include file="/commons/jslibs.jsp"%>
+
 <link type="text/css" rel="stylesheet" href="<%= request.getContextPath()%>/css/workflow.css">
 <style type="text/css">
 	
 </style>
-
-
-<%
-	String taskId = request.getParameter("taskId");
-	String defKey = request.getParameter("defKey");
-
-	if(taskId==null)
-	{
-		taskId="";	
-	}
-	
-	Map<String, Object> formData = new HashMap<String, Object>();
-
-	if (taskId != "") {
-
-		WorkflowEngine workflowEngine = WorkflowBeansFactory.getWorkflowEngine();
-		formData = workflowEngine.retrieveFormData(taskId);
-
-	} else {
-		ProcessDefinitionManager processDefinitionManager = WorkflowBeansFactory.getProcessDefinitionManager();
-		ProcessDefinition processDefinition = processDefinitionManager.getProcessDefinitionEntityByKey(defKey);
-		formData.put("proDefKey", processDefinition.getKey());
-		formData.put("proDefName", processDefinition.getName());
-
-	}
-	
-	for (Entry<String, Object> entry : formData.entrySet()) {
-		request.setAttribute(entry.getKey(), entry.getValue());
-	}
-	
-%>
-
 <script type="text/javascript">
 
 var isFirstTask = ${isFirstTask};
@@ -149,8 +119,7 @@ $(function(){
 <body>
 
 	<div class="navbar">
-		<div class="navbar-inner">
-	
+		<div class="navbar-inner">	
 	<h4>
 		${proDefName}
 	</h4>

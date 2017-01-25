@@ -6,10 +6,9 @@
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">×</button>
-		<h5>选择一下步处理人</h5>
+		<h5>下一步处理人</h5>
 	</div>
 	<div class="modal-body">
-
 
 		<input id="nextUserIds" name="nextUserIds" type="hidden"
 			value="user1,user2"></input>
