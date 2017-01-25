@@ -237,7 +237,8 @@ $(function(){
 					<span>保存</span>
 				</div>
 			</div>
-		</a> <a href="javascript:void(0);" id="toolbar_submit">
+		</a> 
+		<a href="javascript:void(0);" id="toolbar_submit">
 			<div class="button-panel">
 
 				<div class="pic">
@@ -249,7 +250,22 @@ $(function(){
 					<span>提交</span>
 				</div>
 			</div>
-		</a> <a href="javascript:void(0);" id="toolbar_delete">
+		</a> 
+		<a href="javascript:void(0);" id="toolbar_back">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img
+						src="<%=request.getContextPath()%>/images/workflow/back.png"
+						height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>退回</span>
+				</div>
+			</div>
+		</a> 
+		
+		<a href="javascript:void(0);" id="toolbar_delete">
 			<div class="button-panel">
 
 				<div class="pic">
