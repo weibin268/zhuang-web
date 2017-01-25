@@ -1,80 +1,86 @@
-/*begin ≤Àµ•¿∏ */
+/*begin ËèúÂçïÊ†è */
+
 .toolbar {
-	margin-top: 20px;
-	border: 1px solid RGB(237, 237, 237);
-	background-color: RGB(248, 248, 248);
-	width: 87px;
-	position: fixed;
-	top: 80px;
-	right: 20px;
+    margin-top: 20px;
+    border: 1px solid RGB(237, 237, 237);
+    background-color: RGB(248, 248, 248);
+    width: 87px;
+    position: fixed;
+    top: 80px;
+    right: 20px;
 }
 
 .toolbar .button-panel {
-	border: 1px solid RGB(237, 237, 237);
+    border: 1px solid RGB(237, 237, 237);
 }
 
 .toolbar .title {
-	background-color: RGB(156, 195, 79);
-	height: 50px;
-	color: RGB(255, 255, 255);
-	font-size: 17px;
-	line-height: 49px;
-	text-align: center;
+    background-color: RGB(156, 195, 79);
+    height: 50px;
+    color: RGB(255, 255, 255);
+    font-size: 17px;
+    line-height: 49px;
+    text-align: center;
 }
 
 .toolbar .button-panel .pic {
-	padding: 5px;
-	margin-top: 10px
+    padding: 5px;
+    margin-top: 10px
 }
 
 .toolbar .button-panel .content {
-	padding: 5px
+    padding: 5px
 }
 
 .toolbar a {
-	text-align: center;
-	color: RGB(168, 168, 168);
+    text-align: center;
+    color: RGB(168, 168, 168);
 }
 
 .toolbar a:hover {
-	text-decoration: none;
-	color: darkblue !important;
+    text-decoration: none;
+    color: darkblue !important;
 }
 
 .toolbar a img {
-	margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .toolbar a span {
-	width: 3em;
+    width: 3em;
 }
-/*end ≤Àµ•¿∏ */
 
-/*begin ∑µªÿ∂•≤ø∞¥≈•*/
+
+/*end ËèúÂçïÊ†è */
+
+
+/*begin ËøîÂõûÈ°∂ÈÉ®ÊåâÈíÆ*/
+
 div .return-top {
-	position: fixed;
-	top: 85%;
-	left:20px;
-	width: 35px;
+    position: fixed;
+    top: 85%;
+    left: 20px;
+    width: 35px;
 }
 
 div .return-top .return-top-content {
-	color: RGB(156, 195, 79);
+    color: RGB(156, 195, 79);
 }
 
-/*end ∑µªÿ∂•≤ø∞¥≈•*/
+
+/*end ËøîÂõûÈ°∂ÈÉ®ÊåâÈíÆ*/
 
 
-/*begin ±Ìµ•*/
-table tr th
-{	
-	width:15%;
-	background-color: RGB(248, 248, 248);
+/*begin Ë°®Âçï*/
+
+#applyForm table tr th {
+    text-align: right;
+    width: 15%;
+    background-color: RGB(248, 248, 248);
 }
 
-table tr td
-{
-	width:30%;
-	
+#applyForm table tr td {
+    width: 30%;
 }
-/*end ±Ìµ•*/
+
+/*end Ë°®Âçï*/
