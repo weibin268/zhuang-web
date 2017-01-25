@@ -63,3 +63,16 @@ div .return-top .return-top-content {
 }
 
 /*end ·µ»Ø¶¥²¿°´Å¥*/
+
+
+table tr th
+{	
+	width:15%;
+	background-color: RGB(248, 248, 248);
+}
+
+table tr td
+{
+	width:30%;
+	
+}

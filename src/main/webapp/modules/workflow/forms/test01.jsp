@@ -6,11 +6,10 @@
 <table class="table  table-bordered table-condensed">
 
 	<tr>
-		<td>金额：</td>
+		<th>金额：</th>
 		<td><input type="text" id="env_amount" name="env_amount"
 			value="${env_amount}"></input></td>
+		<th></th>
 		<td></td>
-		<td></td>
-
 	</tr>
 </table>

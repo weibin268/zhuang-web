@@ -173,7 +173,7 @@ $(function(){
 				</caption>
 				<tbody>
 					<tr>
-						<td>标题：</td>
+						<th>标题：</th>
 						<td colspan="3"><input type="text" id="env_PROC_TITLE"
 							name="env_PROC_TITLE" value="${env_PROC_TITLE}"
 							style="width: 95%"></input></td>
@@ -181,9 +181,9 @@ $(function(){
 					</tr>
 
 					<tr>
-						<td>申请人：</td>
+						<th>申请人：</th>
 						<td>aaaaa</td>
-						<td>申请人部门：</td>
+						<th>申请人部门：</th>
 						<td>bbb</td>
 					</tr>
 				</tbody>
