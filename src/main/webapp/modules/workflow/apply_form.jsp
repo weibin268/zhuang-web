@@ -16,7 +16,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <%@ include file="/commons/jslibs.jsp"%>
+<link type="text/css" rel="stylesheet" href="<%= request.getContextPath()%>/css/workflow.css">
+<style type="text/css">
+	
+</style>
 
 
 <%
@@ -71,17 +78,17 @@ $(function(){
 		
 		var $actionType = $("#actionType");
 
-		$("#submit").click(function() {
+		$("#toolbar_submit").click(function() {
 			$actionType.val("submit");
 			doPost();
 		});
 
-		$("#back").click(function() {
+		$("#toolbar_back").click(function() {
 			$actionType.val("back");
 			doPost();
 		});
 
-		$("#save").click(
+		$("#toolbar_save").click(
 				function() {
 					$actionType.val("save");
 					doPost(function(data) {
@@ -142,29 +149,34 @@ $(function(){
 
 	<div class="navbar">
 		<div class="navbar-inner">
-		<a class="brand" href="#">${proDefName}</a>
-		<div class="btn-group pull-right">
-			<input type="button" id="save" value="保存" class="btn btn-primary"></input>
-			<input type="button" id="back" value="退回" class="btn btn-primary"></input>
-			<input type="button" id="submit" value="提交" class="btn btn-primary"></input>
-			</div>
-		</div>
+	
+	<h4>
+		${proDefName}
+	</h4>
+	
 	</div>
 
-	<form id="applyForm" name="applyForm" action="">
+	<form id="applyForm" name="applyForm" action="" class="container-fluid"
+		style="padding-left: 130px; padding-right: 130px;">
+
 		<div>
 			<input id="actionType" name="actionType" type="hidden"></input> <input
-				id="defKey" name="defKey" type="hidden"
-				value="<%=defKey%>"></input> <input
-				id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
+				id="defKey" name="defKey" type="hidden" value="<%=defKey%>"></input>
+			<input id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
+		</div>
+
+		<div>
 
 			<table class="table table-bordered table-condensed">
-				<caption><span class="lead">基本信息</span></caption>
+				<caption>
+					<span class="lead">基本信息</span>
+				</caption>
 				<tbody>
 					<tr>
-						<td >标题：</td>
+						<td>标题：</td>
 						<td colspan="3"><input type="text" id="env_PROC_TITLE"
-							name="env_PROC_TITLE" value="${env_PROC_TITLE}"></input></td>
+							name="env_PROC_TITLE" value="${env_PROC_TITLE}"
+							style="width: 95%"></input></td>
 
 					</tr>
 
@@ -192,9 +204,9 @@ $(function(){
 
 			String url = "/modules/workflow/forms/" + formName;
 		%>
-			<jsp:include page="<%=url%>"></jsp:include>
+		<jsp:include page="<%=url%>"></jsp:include>
 	</form>
-	
+
 	<div>
 	
 		<input id="nextUserIds" name="nextUserIds" type="hidden" value="user1,user2"></input>
@@ -202,5 +214,61 @@ $(function(){
 	</div>
 
 
+	<div class="toolbar">
+		<div class="title">快速菜单</div>
+		<a href="javascript:void(0);" id="toolbar_close">
+			<div class="button-panel">
+				<div class="pic">
+					<img src="<%=request.getContextPath()%>/images/workflow/close.png"
+						height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>关闭</span>
+				</div>
+			</div>
+		</a> <a href="javascript:void(0);" id="toolbar_save">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img src="<%=request.getContextPath()%>/images/workflow/save.png"
+						height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>保存</span>
+				</div>
+			</div>
+		</a> <a href="javascript:void(0);" id="toolbar_submit">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img
+						src="<%=request.getContextPath()%>/images/workflow/submit.png"
+						height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>提交</span>
+				</div>
+			</div>
+		</a> <a href="javascript:void(0);" id="toolbar_delete">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img
+						src="<%=request.getContextPath()%>/images/workflow/delete.png"
+						height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>删除</span>
+				</div>
+			</div>
+	</div>
+
+    <div class="return-top">
+        <a href="javascript:scroll(0,0)">
+        	<img class="return-top-pic" style="height:25px;" src="<%=request.getContextPath()%>/images/workflow/returntop.png" />
+            <span class="return-top-content">返回顶部</span>
+        </a>
+    </div>
+    
 </body>
 </html>
