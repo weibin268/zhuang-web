@@ -28,18 +28,19 @@
 </style>
 <script type="text/javascript">
 
-var isFirstTask = "${isFirstTask}"=="true"?true:false;
-var isRunningTask = "${isRunningTask}"=="true"?true:false;
-var currentTaskKey="${currentTaskKey}";
-var currentTaskName="${currentTaskName}";
+	var hasTask = "${isFirstTask}" == "" ? true : false;
+	var isFirstTask = "${isFirstTask}" == "true" ? true : false;
+	var isRunningTask = "${isRunningTask}" == "true" ? true : false;
+	var currentTaskKey = "${currentTaskKey}";
+	var currentTaskName = "${currentTaskName}";
 
-$(function(){
+	$(function() {
 
-	if (isFirstTask==false || isRunningTask==false) {
-		setFormReadonly();
-	}
-	
-});
+		if ((isFirstTask == true && isRunningTask == true)) {
+			setFormReadonly();
+		}
+
+	});
 </script>
 
 <script type="text/javascript">
