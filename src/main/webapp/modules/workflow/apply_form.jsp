@@ -80,7 +80,8 @@ $(function(){
 
 		$("#toolbar_submit").click(function() {
 			$actionType.val("submit");
-			doPost();
+			$("#submit-dialog").modal("show");
+			//doPost();
 		});
 
 		$("#toolbar_back").click(function() {
@@ -205,17 +206,12 @@ $(function(){
 			String url = "/modules/workflow/forms/" + formName;
 		%>
 		<jsp:include page="<%=url%>"></jsp:include>
+
+		<%@ include file="apply_form_submit.jsp" %>
 	</form>
 
-	<div>
-	
-		<input id="nextUserIds" name="nextUserIds" type="hidden" value="user1,user2"></input>
-		
-	</div>
 
 
 <%@ include file="apply_form_toolbar.jsp" %>
-
-    
 </body>
 </html>
