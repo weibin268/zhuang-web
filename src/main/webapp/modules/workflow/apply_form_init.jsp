@@ -52,6 +52,6 @@
 		formName = defKey + ".jsp";
 	}
 
-	formUrl = "/modules/workflow/forms/" + formName;
+	formUrl = "./forms/" + formName;
 	
 %>
