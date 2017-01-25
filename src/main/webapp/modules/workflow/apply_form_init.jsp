@@ -13,12 +13,13 @@
 <%
 	String taskId = request.getParameter("taskId");
 	String defKey = request.getParameter("defKey");
-
-	if(taskId==null)
-	{
-		taskId="";	
-	}
+	String formUrl="";
 	
+	
+	if (taskId == null) {
+		taskId = "";
+	}
+
 	Map<String, Object> formData = new HashMap<String, Object>();
 
 	if (taskId != "") {
@@ -33,9 +34,24 @@
 		formData.put("proDefName", processDefinition.getName());
 
 	}
-	
+
 	for (Entry<String, Object> entry : formData.entrySet()) {
 		request.setAttribute(entry.getKey(), entry.getValue());
 	}
+
+
+	Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
+			.GetApplicationContext().getBean("workflowFormMappings");
+
+	String formName = "";
+
+	Object objPage = workflowFormMappings.get(defKey);
+	if (objPage != null) {
+		formName = objPage.toString();
+	} else {
+		formName = defKey + ".jsp";
+	}
+
+	formUrl = "/modules/workflow/forms/" + formName;
 	
 %>

@@ -159,27 +159,11 @@ $(function(){
 				</tbody>
 			</table>
 		</div>
-		<%
-			Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
-					.GetApplicationContext().getBean("workflowFormMappings");
 
-			String formName ="";
-			
-			Object objPage = workflowFormMappings.get(defKey);
-			if (objPage != null) {
-				formName = objPage.toString();
-			} else {
-				formName = defKey + ".jsp";
-			}
-
-			String url = "/modules/workflow/forms/" + formName;
-		%>
-		<jsp:include page="<%=url%>"></jsp:include>
+		<jsp:include page="<%= formUrl %>"></jsp:include>
 
 		<%@ include file="apply_form_submit.jsp" %>
 	</form>
-
-
 
 <%@ include file="apply_form_toolbar.jsp" %>
 </body>
