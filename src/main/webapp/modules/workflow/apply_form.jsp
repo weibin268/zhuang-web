@@ -135,31 +135,8 @@ $(function(){
 			<input id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
 		</div>
 
-		<div>
-
-			<table class="table table-bordered table-condensed">
-				<caption>
-					<span class="lead">基本信息</span>
-				</caption>
-				<tbody>
-					<tr>
-						<th>标题：</th>
-						<td colspan="3"><input type="text" id="env_PROC_TITLE"
-							name="env_PROC_TITLE" value="${env_PROC_TITLE}"
-							style="width: 95%"></input></td>
-
-					</tr>
-
-					<tr>
-						<th>申请人：</th>
-						<td>aaaaa</td>
-						<th>申请人部门：</th>
-						<td>bbb</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-
+		<%@ include file="apply_form_baseinfo.jsp" %>
+		
 		<jsp:include page="<%= formUrl %>"></jsp:include>
 
 		<%@ include file="apply_form_submit.jsp" %>
