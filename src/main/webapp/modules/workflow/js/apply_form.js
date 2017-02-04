@@ -32,7 +32,8 @@ $(function() {
 			if (objData.success) {
 
 				var userList=objData.data ;
-				alert(JSON.stringify(userList));
+				
+				
 				
 			} else {
 				debugger;
