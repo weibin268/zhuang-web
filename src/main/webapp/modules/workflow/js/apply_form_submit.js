@@ -14,5 +14,11 @@
         $this.remove();
     });
 
-    
 });
+
+function init_apply_form_submit()
+{
+	$("#selAllUsers").html("");
+	$("#selSelectedUsers").html("");
+	
+}

@@ -25,6 +25,8 @@ $(function() {
 			return false;
 		}
 		
+		init_apply_form_submit();
+		
 		$actionType.val("retrieveNextTaskUsers");
 		doPost(function(data){
 			
