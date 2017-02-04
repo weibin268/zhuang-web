@@ -18,6 +18,7 @@ import com.zhuang.web.models.MyJsonResult;
 import com.zhuang.web.util.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowEngine;
+import com.zhuang.workflow.models.UserInfoModel;
 
 /**
  * Servlet implementation class WorkflowEngineServlet
@@ -87,6 +88,14 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 				workflowEngine.back(taskId, comment, formData);
 
+			}else if(actionType.equals("retrieveNextTaskUsers"))
+			{
+				
+				List<UserInfoModel>  userInfoModels =  workflowEngine.retrieveNextTaskUsers(taskId, formData);
+				myJsonResult.setSuccess(true);
+				Gson gson=new GsonBuilder().create();
+				myJsonResult.setData(gson.toJson(userInfoModels));
+				
 			}
 		} catch (Exception e) {
 			
