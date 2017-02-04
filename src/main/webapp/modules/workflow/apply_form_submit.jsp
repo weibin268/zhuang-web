@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
 <div id="submit-dialog" class="modal hide fade" tabindex="-1"
 	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
 	style="width: 500px;">
@@ -25,11 +26,7 @@
 				<td></td>
 
 				<td><select id="selSelectedUsers" multiple="true" style="height: 200px;">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+				
 				</select></td>
 
 			</tr>

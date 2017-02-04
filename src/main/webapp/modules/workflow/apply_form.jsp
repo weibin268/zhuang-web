@@ -22,6 +22,7 @@
 <%@ include file="apply_form_init.jsp" %>
 <link type="text/css" rel="stylesheet" href="./css/apply_form.css">
 <script type="text/javascript" src="./js/apply_form.js"></script>
+<script type="text/javascript" src="./js/apply_form_submit.js"></script>
 
 </head>
 <body>
