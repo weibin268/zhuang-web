@@ -13,7 +13,7 @@
 	<div class="modal-body">
 
 		<input id="nextUserIds" name="nextUserIds" type="hidden"
-			value="user1,user2"></input>
+			value=""></input>
 
 
 		<table>
@@ -37,6 +37,6 @@
 	</div>
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-		<button class="btn btn-primary">确定</button>
+		<button id="submit-dialog-ok" class="btn btn-primary">确定</button>
 	</div>
 </div>
