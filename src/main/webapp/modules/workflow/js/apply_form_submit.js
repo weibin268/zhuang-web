@@ -19,8 +19,7 @@
     	$options = $("#selSelectedUsers option");
     	
     	var arrUserIds=[];
-        arrUserIds.push("aa");
-    	
+        
     	for(var i=0;i<$options.length;i++)
     	{
 
