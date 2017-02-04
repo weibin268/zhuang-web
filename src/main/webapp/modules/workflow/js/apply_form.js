@@ -31,8 +31,8 @@ $(function() {
 			var objData = eval("(" + data + ")");
 			if (objData.success) {
 
-				var userInfoList=objData.data ;
-				alert(JSON.stringify(userInfoList));
+				var userList=objData.data ;
+				alert(JSON.stringify(userList));
 				
 			} else {
 				debugger;
