@@ -32,7 +32,13 @@ $(function() {
 			if (objData.success) {
 
 				var userList=objData.data ;
-				
+				$selAllUsers=$("#selAllUsers");
+				$selAllUsers.html("");
+				for(var i=0;i<userList.length;i++)
+				{
+					$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
+					$selAllUsers.append($opt);
+				}
 				
 				
 			} else {
