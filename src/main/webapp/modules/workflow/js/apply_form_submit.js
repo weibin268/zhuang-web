@@ -30,6 +30,21 @@
 
     	$("#nextUserIds").val(arrUserIds.join(","));
     	
+
+    	$actionType.val("submit");
+		doPost(function(data) {
+			var objData = eval("(" + data + ")");
+			if (objData.success) {
+				
+				alert("提交成功！");
+				
+			} else {
+				debugger;
+				alert(objData.message);
+			}
+
+		});
+    	
     });
     
 });

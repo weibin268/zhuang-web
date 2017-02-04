@@ -4,6 +4,9 @@ var isRunningTask = "${isRunningTask}" == "true" ? true : false;
 var currentTaskKey = "${currentTaskKey}";
 var currentTaskName = "${currentTaskName}";
 
+
+var $actionType;
+
 $(function() {
 
 	if ((isFirstTask == true && isRunningTask == true)) {
@@ -14,11 +17,10 @@ $(function() {
 
 $(function() {
 
-	var $actionType = $("#actionType");
+	$actionType = $("#actionType");
 
 	$("#toolbar_submit").click(function() {
 
-		
 		if($("#taskId").val()=="")
 		{
 			alert("请先保存！");
