@@ -104,6 +104,7 @@ public class WorkflowEngineServlet extends HttpServlet {
 			myJsonResult.setData(ExceptionUtils.getStackTrace(e));
 		
 		}finally {
+			response.setCharacterEncoding("UTF-8");
 			Gson gson=new GsonBuilder().create();
 			gson.toJson(myJsonResult,response.getWriter());
 		}
