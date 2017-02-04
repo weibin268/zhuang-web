@@ -17,7 +17,30 @@ $(function() {
 	var $actionType = $("#actionType");
 
 	$("#toolbar_submit").click(function() {
-		$actionType.val("submit");
+
+		
+		if($("#taskId").val()=="")
+		{
+			alert("请先保存！");
+			return false;
+		}
+		
+		$actionType.val("retrieveNextTaskUsers");
+		doPost(function(data){
+			
+			var objData = eval("(" + data + ")");
+			if (objData.success) {
+
+				var userInfoList=objData.data ;
+				alert(JSON.stringify(userInfoList));
+				
+			} else {
+				debugger;
+				alert(objData.message);
+			}
+			
+		});
+		
 		$("#submit-dialog").modal("show");
 		// doPost();
 	});

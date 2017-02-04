@@ -94,7 +94,7 @@ public class WorkflowEngineServlet extends HttpServlet {
 				List<UserInfoModel>  userInfoModels =  workflowEngine.retrieveNextTaskUsers(taskId, formData);
 				myJsonResult.setSuccess(true);
 				Gson gson=new GsonBuilder().create();
-				myJsonResult.setData(gson.toJson(userInfoModels));
+				myJsonResult.setData(userInfoModels);
 				
 			}
 		} catch (Exception e) {
