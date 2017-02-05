@@ -24,8 +24,8 @@
 				</select></td>
 
 				<td style="text-align: center;">
- 						<button type="button" class="btn btn-link" >添加</button>
- 						<button type="button" class="btn btn-link" >移除</button>
+ 						<button id="btnAddUser" type="button" class="btn btn-link" >添加</button>
+ 						<button id="btnRemoveUser" type="button" class="btn btn-link" >移除</button>
 
 				</td>
 

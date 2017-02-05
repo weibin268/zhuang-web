@@ -14,6 +14,30 @@
         $this.remove();
     });
 
+
+    $("#btnAddUser").click(function(){
+
+        var $selectedOptions = $("#selAllUsers option:selected");
+        var $cloneSelectedOptions=$selectedOptions.clone();
+        $selectedOptions.remove();
+        $("#selSelectedUsers").append($cloneSelectedOptions);
+
+    });
+
+
+    $("#btnRemoveUser").click(function(){
+  
+        var $selectedOptions = $("#selSelectedUsers option:selected");
+        var $cloneSelectedOptions=$selectedOptions.clone();
+        $selectedOptions.remove();
+        $("#selAllUsers").append($cloneSelectedOptions);
+
+    });
+
+    $("#btnRemoveUser").click(function(){
+
+    });
+
     $("#submit-dialog-ok").click(function(){
     	
     	$options = $("#selSelectedUsers option");
