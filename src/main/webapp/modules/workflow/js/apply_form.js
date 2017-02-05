@@ -4,7 +4,7 @@ var $actionType;
 
 $(function() {
 
-	if ((isFirstTask == true && isRunningTask == true)) {
+	if (!(isFirstTask == true && isRunningTask == true)) {
 		setFormReadonly();
 	}
 
