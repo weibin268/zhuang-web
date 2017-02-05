@@ -4,7 +4,7 @@
 
 <div id="submit-dialog" class="modal hide fade" tabindex="-1"
 	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-	style="width: 500px;">
+	style="width: 550px;">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">×</button>
@@ -23,7 +23,11 @@
 						
 				</select></td>
 
-				<td></td>
+				<td style="text-align: center;">
+ 						<button type="button" class="btn btn-link" >添加</button>
+ 						<button type="button" class="btn btn-link" >移除</button>
+
+				</td>
 
 				<td><select id="selSelectedUsers" multiple="true" style="height: 200px;">
 				

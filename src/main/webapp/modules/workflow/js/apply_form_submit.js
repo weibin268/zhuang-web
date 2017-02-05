@@ -18,6 +18,12 @@
     	
     	$options = $("#selSelectedUsers option");
     	
+        if($options.length==0)
+        {
+            alert("请选择处理人！");
+            return false;
+        }
+
     	var arrUserIds=[];
         
     	for(var i=0;i<$options.length;i++)
