@@ -56,7 +56,13 @@
 	
 	if(request.getAttribute("toolbar_delete")==null)
 	{
-		request.setAttribute("toolbar_delete",false);
+		if(request.getAttribute("isFirstTask")==null || (request.getAttribute("isFirstTask").toString()=="true" && request.getAttribute("isRunningTask").toString()=="true"))
+		{
+			request.setAttribute("toolbar_delete",true);
+		}else
+		{
+			request.setAttribute("toolbar_delete",false);
+		}
 	}
 	
 %>
