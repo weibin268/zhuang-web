@@ -1,5 +1,6 @@
 ﻿<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
 
 	<div class="toolbar">
 		<div class="title">快速菜单</div>
@@ -46,6 +47,9 @@
 				</div>
 			</div>
 		</a>
+
+		<%if (request.getAttribute("toolbar_delete").toString()=="true"){%>
+		
 		<a href="javascript:void(0);" id="toolbar_delete">
 			<div class="button-panel">
 
@@ -57,6 +61,7 @@
 				</div>
 			</div>
 		</a>
+		<% }%>
 	</div>
 
 

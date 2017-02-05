@@ -54,4 +54,9 @@
 
 	formUrl = "./forms/" + formName;
 	
+	if(request.getAttribute("toolbar_delete")==null)
+	{
+		request.setAttribute("toolbar_delete",false);
+	}
+	
 %>
