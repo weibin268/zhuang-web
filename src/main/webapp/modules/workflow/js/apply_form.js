@@ -1,9 +1,4 @@
-﻿var hasTask = "${isFirstTask}" == "" ? true : false;
-var isFirstTask = "${isFirstTask}" == "true" ? true : false;
-var isRunningTask = "${isRunningTask}" == "true" ? true : false;
-var currentTaskKey = "${currentTaskKey}";
-var currentTaskName = "${currentTaskName}";
-
+﻿
 
 var $actionType;
 
