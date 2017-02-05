@@ -37,7 +37,7 @@
 			if (objData.success) {
 				
 				alert("提交成功！");
-				
+				//window.close();
 			} else {
 				debugger;
 				alert(objData.message);
