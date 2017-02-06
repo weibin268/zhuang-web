@@ -14,6 +14,7 @@
 				</div>
 			</div>
 		</a>
+		<%if (request.getAttribute("toolbar_save").toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_save">
 			<div class="button-panel">
 
@@ -25,6 +26,8 @@
 				</div>
 			</div>
 		</a>
+		<% }%>
+		<%if (request.getAttribute("toolbar_submit").toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_submit">
 			<div class="button-panel">
 
@@ -36,6 +39,8 @@
 				</div>
 			</div>
 		</a>
+		<% }%>
+		<%if (request.getAttribute("toolbar_back").toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_back">
 			<div class="button-panel">
 
@@ -47,9 +52,8 @@
 				</div>
 			</div>
 		</a>
-
+		<% }%>
 		<%if (request.getAttribute("toolbar_delete").toString()=="true"){%>
-		
 		<a href="javascript:void(0);" id="toolbar_delete">
 			<div class="button-panel">
 

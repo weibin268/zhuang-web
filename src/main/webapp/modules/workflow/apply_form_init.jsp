@@ -41,7 +41,7 @@
 
 
 	Map<String, String> workflowFormMappings = (Map<String, String>) ApplicationContextUtil
-			.GetApplicationContext().getBean("workflowFormMappings");
+	.GetApplicationContext().getBean("workflowFormMappings");
 
 	String formName = "";
 
@@ -58,10 +58,33 @@
 	{
 		if(request.getAttribute("isFirstTask")==null || (request.getAttribute("isFirstTask").toString()=="true" && request.getAttribute("isRunningTask").toString()=="true"))
 		{
-			request.setAttribute("toolbar_delete",true);
+	request.setAttribute("toolbar_delete",true);
 		}else
 		{
-			request.setAttribute("toolbar_delete",false);
+	request.setAttribute("toolbar_delete",false);
+		}
+	}
+	
+	if(request.getAttribute("toolbar_back")==null)
+	{
+		request.setAttribute("toolbar_back",false);
+	}
+	
+	if(request.getAttribute("toolbar_submit")==null)
+	{
+		if( request.getAttribute("isRunningTask")==null || request.getAttribute("isRunningTask").toString()=="true")
+		{
+	request.setAttribute("toolbar_submit",true);
+		}else{
+	request.setAttribute("toolbar_submit",false);
+		}
+	}
+	
+	if (request.getAttribute("toolbar_save") == null) {
+		if (request.getAttribute("isRunningTask") == null || request.getAttribute("isRunningTask").toString() == "true") {
+			request.setAttribute("toolbar_save", true);
+		} else {
+			request.setAttribute("toolbar_save", false);
 		}
 	}
 	
