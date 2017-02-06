@@ -18,6 +18,7 @@ import com.zhuang.web.models.MyJsonResult;
 import com.zhuang.web.util.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowEngine;
+import com.zhuang.workflow.models.NextTaskInfoModel;
 import com.zhuang.workflow.models.UserInfoModel;
 
 /**
@@ -93,10 +94,10 @@ public class WorkflowEngineServlet extends HttpServlet {
 			}else if(actionType.equals("retrieveNextTaskUsers"))
 			{
 				
-				List<UserInfoModel>  userInfoModels =  workflowEngine.retrieveNextTaskUsers(taskId, formData);
+				NextTaskInfoModel nextTaskInfoModel =  workflowEngine.retrieveNextTaskInfo(taskId, formData);
 				myJsonResult.setSuccess(true);
 				Gson gson=new GsonBuilder().create();
-				myJsonResult.setData(userInfoModels);
+				myJsonResult.setData(nextTaskInfoModel);
 				
 			}
 		} catch (Exception e) {

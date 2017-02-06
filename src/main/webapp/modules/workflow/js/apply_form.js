@@ -30,7 +30,10 @@ $(function() {
 			var objData = eval("(" + data + ")");
 			if (objData.success) {
 
-				var userList=objData.data ;
+				var userList=objData.data.users ;
+				var nextTaskKey=objData.data.taskKey;
+				var nextTaskName=objData.data.taskName;
+
 				$selAllUsers=$("#selAllUsers");
 				$selAllUsers.html("");
 				for(var i=0;i<userList.length;i++)
