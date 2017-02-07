@@ -113,5 +113,5 @@ function doPost(success) {
 }
 
 function setFormReadonly() {
-	$("#applyForm input").attr("disabled", "true")
+	$("#applyForm input").attr("readonly", "readonly")
 }
