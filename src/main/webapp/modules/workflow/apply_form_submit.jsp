@@ -42,6 +42,6 @@
 	</div>
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-		<button id="submit-dialog-ok" class="btn btn-primary">确定</button>
+		<a id="submit-dialog-ok" class="btn btn-primary">确定</a>
 	</div>
 </div>

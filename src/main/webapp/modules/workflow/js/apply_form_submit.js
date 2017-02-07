@@ -67,7 +67,8 @@
 			if (objData.success) {
 				
 				alert("提交成功！");
-				//window.close();
+				location.replace(location.href);
+				
 			} else {
 				debugger;
 				alert(objData.message);
