@@ -42,6 +42,7 @@ $(function() {
 					$selAllUsers.append($opt);
 				}
 				
+				$("#spNextTaskName").html(nextTaskName);
 				
 			} else {
 				debugger;

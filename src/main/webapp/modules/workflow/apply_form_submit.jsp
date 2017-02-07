@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
 
 
 <div id="submit-dialog" class="modal hide fade" tabindex="-1"
@@ -8,7 +9,7 @@
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">×</button>
-		<h5>下一步处理人</h5>
+		<h5>下一步处理人（<span id="spNextTaskName"></span>)</h5>
 	</div>
 	<div class="modal-body">
 
