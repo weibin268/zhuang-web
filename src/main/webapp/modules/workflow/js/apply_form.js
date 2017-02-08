@@ -60,6 +60,32 @@ $(function() {
 		
 	});
 
+	$("#toolbar_delete").click(function() {
+		
+		if(!confirm("确定删除？"))
+		{
+			return false;
+		}
+		
+		doPost("delete",function(data){
+			
+			var objData = eval("(" + data + ")");
+			if (objData.success) {
+				
+				var objResult = eval("(" + objData.data + ")");
+				location.replace(location.href);
+				alert("删除成功！");
+				
+			} else {
+				debugger;
+				alert(objData.message);
+			}
+			
+		});
+		
+	});
+
+	
 	$("#toolbar_save").click(
 			function() {
 				

@@ -91,7 +91,13 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 				workflowEngine.back(taskId, comment, formData);
 
-			}else if(actionType.equals("retrieveNextTaskUsers"))
+			}
+			else if (actionType.equals("delete")) {
+
+				workflowEngine.delete(taskId, comment, formData);
+				myJsonResult.setSuccess(true);
+			}
+			else if(actionType.equals("retrieveNextTaskUsers"))
 			{
 				
 				NextTaskInfoModel nextTaskInfoModel =  workflowEngine.retrieveNextTaskInfo(taskId, formData);
