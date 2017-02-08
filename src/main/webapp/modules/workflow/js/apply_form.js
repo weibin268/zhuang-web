@@ -24,8 +24,7 @@ $(function() {
 		
 		init_apply_form_submit();
 		
-		$actionType.val("retrieveNextTaskUsers");
-		doPost(function(data){
+		doPost("retrieveNextTaskUsers",function(data){
 			
 			var objData = eval("(" + data + ")");
 			if (objData.success) {
@@ -56,14 +55,15 @@ $(function() {
 	});
 
 	$("#toolbar_back").click(function() {
-		$actionType.val("back");
-		doPost();
+		
+		doPost("back");
+		
 	});
 
 	$("#toolbar_save").click(
 			function() {
-				$actionType.val("save");
-				doPost(function(data) {
+				
+				doPost("save",function(data) {
 					var objData = eval("(" + data + ")");
 					if (objData.success) {
 						var objResult = eval("(" + objData.data + ")");
@@ -89,7 +89,10 @@ $(function() {
 
 });
 
-function doPost(success) {
+function doPost(actionType,success) {
+	
+	$actionType.val(actionType);
+	
 	var url = contextPath + "/wf/engine";
 
 	$.ajax(url,

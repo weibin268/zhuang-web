@@ -60,9 +60,7 @@
 
     	$("#nextUserIds").val(arrUserIds.join(","));
     	
-
-    	$actionType.val("submit");
-		doPost(function(data) {
+		doPost("submit",function(data) {
 			var objData = eval("(" + data + ")");
 			if (objData.success) {
 				
