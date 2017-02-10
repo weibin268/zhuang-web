@@ -10,10 +10,10 @@
 		</caption>
 		<tbody>
 			<%
-				//String taskId = request.getParameter("taskId");
-				if (taskId != "") {
+				String taskId2 = request.getParameter("taskId");
+				if (taskId2 != "") {
 					List<TaskInfoModel> taskInfoModels = WorkflowBeansFactory.getWorkflowQueryManager()
-							.getHistoryTaskInfoList(taskId);
+							.getHistoryTaskInfoList(taskId2);
 					for (TaskInfoModel taskInfoModel : taskInfoModels) {
 					
 			%>
