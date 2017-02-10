@@ -26,11 +26,13 @@
 					for (TaskInfoModel taskInfoModel : taskInfoModels) {
 					
 			%>
-			<td><%=taskInfoModel.getName()%></td>
-			<td><%=taskInfoModel.getUserName()%></td>
-			<td><%=taskInfoModel.getComment()%></td>
-			<td><%=taskInfoModel.getStartTime()%></td>
-			<td><%=taskInfoModel.getEndTime()%></td>
+			<tr>
+				<td><%=taskInfoModel.getName()%></td>
+				<td><%=taskInfoModel.getUserName()%></td>
+				<td><%=taskInfoModel.getComment()%></td>
+				<td><%=taskInfoModel.getStartTime()%></td>
+				<td><%=taskInfoModel.getEndTime()%></td>
+			</tr>
 			<%
 				}
 				}
