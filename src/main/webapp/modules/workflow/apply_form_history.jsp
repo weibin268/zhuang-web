@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.zhuang.workflow.models.TaskInfoModel"%>
 <%@page import="java.util.List"%>
 <%@page import="com.zhuang.workflow.WorkflowBeansFactory"%>
@@ -19,7 +20,9 @@
 		</thead>
 		<tbody>
 			<%
+				SimpleDateFormat dtFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				String taskId2 = request.getParameter("taskId");
+				
 				if (taskId2!=null && taskId2 != "") {
 					List<TaskInfoModel> taskInfoModels = WorkflowBeansFactory.getWorkflowQueryManager()
 							.getHistoryTaskInfoList(taskId2);
@@ -29,9 +32,9 @@
 			<tr>
 				<td><%=taskInfoModel.getName()%></td>
 				<td><%=taskInfoModel.getUserName()%></td>
-				<td><%=taskInfoModel.getComment()%></td>
-				<td><%=taskInfoModel.getStartTime()%></td>
-				<td><%=taskInfoModel.getEndTime()%></td>
+				<td><%=taskInfoModel.getComment()==null?"":taskInfoModel.getComment()%></td>
+				<td><%=taskInfoModel.getStartTime()==null?"": dtFormatter.format(taskInfoModel.getStartTime())%></td>
+				<td><%=taskInfoModel.getEndTime()==null?"":dtFormatter.format(taskInfoModel.getEndTime())%></td>
 			</tr>
 			<%
 				}
