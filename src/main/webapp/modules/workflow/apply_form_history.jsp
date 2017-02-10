@@ -8,6 +8,15 @@
 		<caption>
 			<span class="lead">审批记录</span>
 		</caption>
+		<thead>
+			<tr>
+				<th style="width:20%">步骤名</th>
+				<th style="width:20%">处理人</th>
+				<th style="width:20%">处理意见</th>
+				<th style="width:20%">开始时间</th>
+				<th style="width:20%">结束时间</th>
+			</tr>
+		</thead>
 		<tbody>
 			<%
 				String taskId2 = request.getParameter("taskId");
