@@ -73,13 +73,13 @@ div .return-top .return-top-content {
 
 /*begin 表单*/
 
-#applyForm table tr th {
+#applyForm .wftable tr th {
     text-align: right;
     width: 15%;
     background-color: RGB(248, 248, 248);
 }
 
-#applyForm table tr td {
+#applyForm .wftable tr td {
     width: 30%;
 }
 

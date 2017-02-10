@@ -48,6 +48,8 @@
 		
 		<jsp:include page="<%= formUrl %>"></jsp:include>
 
+		<%@ include file="apply_form_history.jsp" %>
+		
 		<%@ include file="apply_form_submit.jsp" %>
 	</form>
 

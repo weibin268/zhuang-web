@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 
-
-<table class="table  table-bordered table-condensed">
+<table class="wftable table table-bordered table-condensed">
 
 	<tr>
 		<th>金额：</th>

@@ -3,7 +3,7 @@
 
 		<div>
 
-			<table class="table table-bordered table-condensed">
+			<table class="wftable table table-bordered table-condensed">
 				<caption>
 					<span class="lead">基本信息</span>
 				</caption>
