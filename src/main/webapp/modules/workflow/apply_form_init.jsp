@@ -81,7 +81,7 @@
 	}
 	
 	if (request.getAttribute("toolbar_save") == null) {
-		if (request.getAttribute("isFirstTask") == null || request.getAttribute("isFirstTask").toString() == "true") {
+		if (request.getAttribute("isFirstTask") == null || (request.getAttribute("isFirstTask").toString() == "true" && request.getAttribute("isRunningTask").toString() == "true" )) {
 			request.setAttribute("toolbar_save", true);
 		} else {
 			request.setAttribute("toolbar_save", false);
