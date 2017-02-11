@@ -35,6 +35,11 @@
 				</select></td>
 
 			</tr>
+			<tr>
+				<td colspan="4">
+					<textarea id="comment" name="comment" rows="3" style="width:97%;">${comment}</textarea>
+				</td>
+			</tr>
 
 		</table>
 
