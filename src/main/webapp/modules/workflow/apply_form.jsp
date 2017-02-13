@@ -1,3 +1,5 @@
+<%@page import="com.zhuang.workflow.models.WorkflowChoiceOptions"%>
+<%@page import="com.zhuang.workflow.impl.ActivitiWorkflowEngine"%>
 <%@page import="org.activiti.engine.repository.ProcessDefinition"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="com.zhuang.workflow.activiti.ProcessDefinitionManager"%>
@@ -39,8 +41,10 @@
 		style="padding-left: 130px; padding-right: 130px;">
 
 		<div>
-			<input id="actionType" name="actionType" type="hidden"></input> <input
-				id="defKey" name="defKey" type="hidden" value="<%=defKey%>"></input>
+			<input id="actionType" name="actionType" type="hidden"></input>
+			<input id="env_choice" 
+			name="<%=ActivitiWorkflowEngine.ACTIVITI_ENV_VAR_KEY_PREFIX%><%=WorkflowChoiceOptions.getStoreKey()%>" type="hidden"></input>
+			<input id="defKey" name="defKey" type="hidden" value="<%=defKey%>"></input>
 			<input id="taskId" name="taskId" type="hidden" value="<%=taskId%>"></input>
 		</div>
 

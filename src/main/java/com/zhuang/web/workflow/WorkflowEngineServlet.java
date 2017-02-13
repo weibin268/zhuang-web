@@ -87,10 +87,6 @@ public class WorkflowEngineServlet extends HttpServlet {
 
 				myJsonResult.setSuccess(true);
 				
-			} else if (actionType.equals("back")) {
-
-				workflowEngine.back(taskId, comment, formData);
-
 			}
 			else if (actionType.equals("delete")) {
 

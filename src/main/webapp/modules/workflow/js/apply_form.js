@@ -21,6 +21,8 @@ $(function() {
 			alert("请先保存！");
 			return false;
 		}
+
+		$("#env_choice").val("提交");
 		
 		init_apply_form_submit();
 		
