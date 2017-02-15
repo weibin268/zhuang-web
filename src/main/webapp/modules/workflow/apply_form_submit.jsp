@@ -36,6 +36,12 @@
 
 			</tr>
 			<tr>
+				<td colspan="4" style="font-weight:bold;">
+				处理意见
+				</td>
+			</tr>
+
+			<tr>
 				<td colspan="4">
 					<textarea id="comment" name="comment" rows="3" style="width:97%;">${comment}</textarea>
 				</td>
