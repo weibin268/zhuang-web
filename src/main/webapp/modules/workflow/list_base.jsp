@@ -15,6 +15,21 @@
 <link type="text/css" rel="stylesheet" href="./css/list_base.css">
 <script type="text/javascript" src="./js/list_base.js"></script>
 
+<script id="pager_template" type="text/html">
+
+	<div class="list-pager">
+        <span class="stat">第<span class="page">{{Page}}</span>页/共<span class="page">{{TotalPage}}</span>页 每页<span class="page">{{PageSize}}</span>条 共<span class="page">{{Total}}</span>条</span>
+        <ul>
+            <li><a href="javascript:void(0);" data-pager="1" data-enabled="{{Page>1?'true':'false'}}"><span class="icon-fast-backward"></span>首页</a></li>
+            <li><a href="javascript:void(0);" data-pager="{{Page-1}}" data-enabled="{{Page-1>0?'true':'false'}}"><span class="icon-backward"></span>上一页</a></li>
+            <li><a href="javascript:void(0);" data-pager="{{Page+1}}" data-enabled="{{Page+1<=TotalPage?'true':'false'}}"><span class="icon-forward"></span>下一页</a></li>
+            <li><a href="javascript:void(0);" data-pager="{{TotalPage}}" data-enabled="{{Page<=TotalPage?'true':'false'}}"><span class="icon-fast-forward"></span>末页</a></li>
+        </ul>
+	</div>
+
+
+</script>
+
 </head>
 <body>
 <%

@@ -1,86 +1,9 @@
-/*begin 菜单栏 */
-
-.toolbar {
-    margin-top: 20px;
-    border: 1px solid RGB(237, 237, 237);
-    background-color: RGB(248, 248, 248);
-    width: 87px;
-    position: fixed;
-    top: 80px;
-    right: 20px;
-}
-
-.toolbar .button-panel {
-    border: 1px solid RGB(237, 237, 237);
-}
-
-.toolbar .title {
-    background-color: RGB(156, 195, 79);
-    height: 50px;
-    color: RGB(255, 255, 255);
-    font-size: 17px;
-    line-height: 49px;
-    text-align: center;
-}
-
-.toolbar .button-panel .pic {
-    padding: 5px;
-    margin-top: 10px
-}
-
-.toolbar .button-panel .content {
-    padding: 5px
-}
-
-.toolbar a {
-    text-align: center;
-    color: RGB(168, 168, 168);
-}
-
-.toolbar a:hover {
-    text-decoration: none;
-    color: darkblue !important;
-}
-
-.toolbar a img {
-    margin-bottom: 3px;
-}
-
-.toolbar a span {
-    width: 3em;
-}
-
-
-/*end 菜单栏 */
-
-
-/*begin 返回顶部按钮*/
-
-div .return-top {
-    position: fixed;
-    top: 85%;
-    left: 20px;
-    width: 35px;
-}
-
-div .return-top .return-top-content {
-    color: RGB(156, 195, 79);
-}
-
-
-/*end 返回顶部按钮*/
-
-
-/*begin 表单*/
-
-#applyForm .wftable tr th {
-    text-align: right;
-    width: 15%;
-    background-color: RGB(248, 248, 248);
-}
-
-#applyForm .wftable tr td {
-    width: 30%;
-}
-
-/*end 表单*/
+/********************************************************
+                        ��ҳ�ؼ���ʽ
+*********************************************************/
+.list-pager { height: 40px; line-height: 40px; clear: both; border-top: solid 1px #e2e2e2; padding: 0 5px; }
+.list-pager .stat { float: left; color: #59636a; }
+.list-pager .page { color: #2e8dbf; margin: 0 2px; }
+.list-pager ul { float: right; list-style-type: none; }
+.list-pager ul li { float: left; margin: 5px 7px; }
+.list-pager ul li a { padding: 3px; height: 34px; line-height: 34px; }

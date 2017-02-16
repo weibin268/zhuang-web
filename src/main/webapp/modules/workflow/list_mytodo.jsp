@@ -34,6 +34,8 @@
                     {{/each}} {{/if}}
                 </tbody>
             </table>
+
+			{{include 'pager_template'}}
         </script>
 
         <script type="text/javascript">
