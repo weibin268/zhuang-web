@@ -12,18 +12,10 @@
 /********************************************************
 		列表样式
 *********************************************************/
-.list-container table{margin-bottom:0px;}
+.page-panel .title { height: 24px; line-height: 24px; padding: 3px 7px; background-color: #f7f7f7; border-bottom: 1px solid #e7e6e6; }
 
-
-.title { height: 24px; line-height: 24px; padding: 3px 7px; background-color: #f7f7f7; border-bottom: 1px solid #e7e6e6; }
-.grid-panel { background-color: white; border: 1px solid #e2e2e2; }
 .search-panel { background-color: white; border: 1px solid #e2e2e2; }
+.search-panel form{margin:5px;}
 
-
-/*查询条件表单中的控件*/
-.search-form button{ margin-left: 5px;}
-.search-form div.search-part{ margin-top: 5px; padding-left: 59px;}
-.search-form .input-medium { margin-bottom: 0px !important; }
-.search-form .input-small { margin-bottom: 0px !important; }
-.search-form select.input-medium { width: 160px; }
-.search-form span { height: 28px; line-height: 28px; margin-left: 1em; }
+.grid-panel table{margin-bottom:0px;}
+.grid-panel { background-color: white; border: 1px solid #e2e2e2; }

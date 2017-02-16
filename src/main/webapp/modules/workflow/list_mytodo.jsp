@@ -2,23 +2,21 @@
 	pageEncoding="UTF-8"%>
     <%@ page isELIgnored="false"%>
 
-        <div>
-            <div class="search-panel">
-                <div class="title"><span class="icon-search"></span>查询条件</div>
-
-                <form id="search-form" class="search-form" action="" method="POST">
-                    <fieldset>
-                        <div class="search-form">
-                            <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
-                            <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text"
-                                value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
-                            <button type="submit" class="btn btn-success">查询</button>
-                            <div class="search-part hide">
-                            
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
+        <div class="page-panel">
+        
+            <div class="search-panel">            
+            	<div class="title"><span class="icon-search"></span>查询条件</div>
+                <form id="conditionForm" class="form-inline" action="" method="POST">
+                    <div class="search-form">
+                          <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
+                          <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text"
+                              value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
+                          <button type="submit" class="btn btn-success">查询</button>
+                          <div class="search-part hide">
+                          
+                          </div>
+                     </div>
+				</form>
             </div>
 
             <div class="grid-panel">
