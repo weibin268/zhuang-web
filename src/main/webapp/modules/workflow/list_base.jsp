@@ -18,7 +18,7 @@
 <script id="pager_template" type="text/html">
 
 	<div class="list-pager">
-        <span class="stat">第<span class="page">{{Page}}</span>页/共<span class="page">{{TotalPage}}</span>页 每页<span class="page">{{PageSize}}</span>条 共<span class="page">{{Total}}</span>条</span>
+        <span class="stat">第<span class="page">{{pageNo}}</span>页/共<span class="page">{{totalPages}}</span>页 每页<span class="page">{{pageSize}}</span>条 共<span class="page">{{totalRows}}</span>条</span>
         <ul>
             <li><a href="javascript:void(0);" data-pager="1" data-enabled="{{Page>1?'true':'false'}}"><span class="icon-fast-backward"></span>首页</a></li>
             <li><a href="javascript:void(0);" data-pager="{{Page-1}}" data-enabled="{{Page-1>0?'true':'false'}}"><span class="icon-backward"></span>上一页</a></li>
