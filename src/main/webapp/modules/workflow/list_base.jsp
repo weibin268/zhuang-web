@@ -12,8 +12,8 @@
 
 <%@ include file="/commons/jslibs.jsp"%>
 
-<link type="text/css" rel="stylesheet" href="./css/base_list.css">
-<script type="text/javascript" src="./js/base_list.js"></script>
+<link type="text/css" rel="stylesheet" href="./css/list_base.css">
+<script type="text/javascript" src="./js/list_base.js"></script>
 
 </head>
 <body>

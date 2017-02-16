@@ -4,16 +4,39 @@ $(function() {
 
 });
 
-function doPost(actionType,success) {
+function renderList(actionType,containerId,templateId,formId)
+{
+	if(!formId)
+	{
+		formId="conditionForm";
+	}
 	
-	$actionType.val(actionType);
+	doPost(actionType,formId,function(data){
+
+		var objData = eval("(" + data + ")");
+		if (objData.success) {
+			
+			$("#" + containerId).html(template(templateId, objData.data));
+		
+			
+		} else {
+			debugger;
+			alert(objData.message);
+		}
+
+
+	});
+    
+}
+
+function doPost(actionType,formId,success) {
 	
-	var url = contextPath + "/wf/engine";
+	var url = contextPath + "/wf/query?actionType="+actionType;
 
 	$.ajax(url,
 			{
 				type : "POST",
-				data : $(document.forms["applyForm"]).serialize(),
+				data : $("#" + formId).serialize(),
 				beforeSend : function() {
 					if (false)
 						return false;

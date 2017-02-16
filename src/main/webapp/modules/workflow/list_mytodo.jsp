@@ -3,11 +3,11 @@
     <%@ page isELIgnored="false"%>
 
         <div>
-            todolist
-
+            <div id="list-container" class="">
+            </div>
         </div>
 
-        <script id="t_list" type="text/html">
+        <script id="list-template" type="text/html">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -19,11 +19,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{if empty}}
+                    {{if list.length==0}}
                     <tr>
                         <td colspan="5" style="text-align: center">没有查询到相关数据</td>
                     </tr>
-                    {{else}} {{each List}}
+                    {{else}} {{each list}}
                     <tr>
                         <td class="overflow center" title="{{$value.title}}">{{$value.title}}</td>
                         <td class="overflow center" title="{{$value.applyUser}}">{{$value.applyUser}}</td>
@@ -34,4 +34,11 @@
                     {{/each}} {{/if}}
                 </tbody>
             </table>
+        </script>
+
+        <script type="text/javascript">
+            $(function() {
+                renderList("mytodo", "list-container", "list-template");
+
+            });
         </script>
