@@ -40,7 +40,10 @@
 
         <script type="text/javascript">
             $(function() {
-                renderList("mytodo", "list-container", "list-template");
+            	
+            	var url = contextPath + "/wf/query?actionType=mytodo";
+
+                renderList(url, "list-container", "list-template");
 
             });
         </script>
