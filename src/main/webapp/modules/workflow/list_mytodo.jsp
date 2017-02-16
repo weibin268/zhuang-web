@@ -3,7 +3,7 @@
     <%@ page isELIgnored="false"%>
 
         <div>
-            <div id="list-container" class="">
+            <div id="list-container" class="list-container">
             </div>
         </div>
 
