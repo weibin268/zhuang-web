@@ -1,13 +1,3 @@
-<%@page import="com.zhuang.workflow.models.WorkflowChoiceOptions"%>
-<%@page import="com.zhuang.workflow.impl.ActivitiWorkflowEngine"%>
-<%@page import="org.activiti.engine.repository.ProcessDefinition"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="com.zhuang.workflow.activiti.ProcessDefinitionManager"%>
-<%@page import="com.zhuang.workflow.WorkflowEngine"%>
-<%@page import="com.zhuang.workflow.WorkflowBeansFactory"%>
-<%@page import="java.util.Map.Entry"%>
-<%@page import="com.zhuang.workflow.util.ApplicationContextUtil"%>
-<%@page import="java.util.Map"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
@@ -27,6 +17,9 @@
 
 </head>
 <body>
-
+<%
+	String pageUrl=request.getParameter("page")+".jsp" ;
+%>
+		<jsp:include page="<%=pageUrl%>"></jsp:include>
 </body>
 </html>

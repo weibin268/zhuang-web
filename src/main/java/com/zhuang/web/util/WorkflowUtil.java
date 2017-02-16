@@ -20,4 +20,8 @@ public class WorkflowUtil {
 		}
 		return result;
 	}
+	
+	public static String getCurrentUserId() {
+		return "zwb";
+	}
 }

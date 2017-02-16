@@ -51,7 +51,7 @@ public class WorkflowEngineServlet extends HttpServlet {
 		String comment = request.getParameter("comment");
 		String nextUserIds = request.getParameter("nextUserIds");
 
-		String currentUserId = "zzwwbb";
+		String currentUserId = WorkflowUtil.getCurrentUserId();
 
 		try {
 
