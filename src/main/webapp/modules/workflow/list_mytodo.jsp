@@ -3,20 +3,20 @@
     <%@ page isELIgnored="false"%>
 
         <div class="page-panel">
-        
-            <div class="search-panel">            
-            	<div class="title"><span class="icon-search"></span>查询条件</div>
+
+            <div class="search-panel">
+                <div class="title"><span class="icon-search"></span>查询条件</div>
                 <form id="conditionForm" class="form-inline" action="" method="POST">
                     <div class="search-form">
-                          <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
-                          <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text"
-                              value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
-                          <button type="submit" class="btn btn-success">查询</button>
-                          <div class="search-part hide">
-                          
-                          </div>
-                     </div>
-				</form>
+                        <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
+                        <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text" value=""
+                            onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
+                        <button type="submit" class="btn btn-success">查询</button>
+                        <div class="search-part hide">
+
+                        </div>
+                    </div>
+                </form>
             </div>
 
             <div class="grid-panel">
@@ -32,8 +32,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
         <script id="list-template" type="text/html">
             <table class="table table-striped">
                 <thead>
@@ -52,7 +52,13 @@
                     </tr>
                     {{else}} {{each list}}
                     <tr>
-                        <td class="overflow center" title="{{$value.title}}">{{$value.title}}</td>
+                        <td class="overflow center" title="{{$value.title}}">
+
+                            <a href="javascript:void(0);" onclick="openApplyForm('{{$value.defKey}}','{{$value.taskId}}')">
+                            {{$value.title}}
+                            </a>
+
+                        </td>
                         <td class="overflow center" title="{{$value.applyUser}}">{{$value.applyUser}}</td>
                         <td class="overflow center" title="{{$value.applyTime}}">{{$value.applyTime}}</td>
                         <td class="overflow center" title="{{$value.currentActivityName}}">{{$value.currentActivityName}}</td>
@@ -73,4 +79,13 @@
                 renderList(url, "list-container", "list-template");
 
             });
+            
+            function openApplyForm(defKey,taskId)
+            {
+            	defKey=defKey.split(":")[0];
+				
+            	var applyFormUrl=contextPath+"/modules/workflow/apply_form.jsp?defKey="+defKey+"&taskId="+taskId;
+
+				window.open(applyFormUrl);
+            }
         </script>
