@@ -3,10 +3,39 @@
     <%@ page isELIgnored="false"%>
 
         <div>
-            <div id="list-container" class="list-container">
+            <div class="search-panel">
+                <div class="title"><span class="icon-search"></span>查询条件</div>
+
+                <form id="search-form" class="search-form" action="" method="POST">
+                    <fieldset>
+                        <div class="search-form">
+                            <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
+                            <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text"
+                                value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
+                            <button type="submit" class="btn btn-success">查询</button>
+                            <div class="search-part hide">
+                            
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="grid-panel">
+                <div class="title">
+                    <span style="float:right">
+                        <a href="javascript:void(0);" id="btnExport" class="applybtn"><span class="icon-plus"></span>导出</a>
+                    </span>
+                    我的待办列表
+                </div>
+                <div>
+                    <div id="list-container" class="list-container">
+                    </div>
+                </div>
             </div>
         </div>
-
+        
+        
         <script id="list-template" type="text/html">
             <table class="table table-striped">
                 <thead>
@@ -35,13 +64,13 @@
                 </tbody>
             </table>
 
-			{{include 'pager_template'}}
+            {{include 'pager_template'}}
         </script>
 
         <script type="text/javascript">
             $(function() {
-            	
-            	var url = contextPath + "/wf/query?actionType=mytodo";
+
+                var url = contextPath + "/wf/query?actionType=mytodo";
 
                 renderList(url, "list-container", "list-template");
 
