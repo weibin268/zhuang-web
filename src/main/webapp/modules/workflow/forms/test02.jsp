@@ -5,10 +5,11 @@
 <table class="wftable table table-bordered table-condensed">
 
 	<tr>
-		<th>请假事由：</th>
+		<th>金额：</th>
 		<td><input type="text" id="env_amount" name="env_amount"
 			value="${env_amount}"></input></td>
-		<th>请假时间：</th>
+		<th></th>
 		<td></td>
 	</tr>
+	
 </table>
