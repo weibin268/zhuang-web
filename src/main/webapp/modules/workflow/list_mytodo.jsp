@@ -11,7 +11,7 @@
                         <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
                         <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text" value=""
                             onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
-                        <button type="submit" class="btn btn-success">查询</button>
+                        <a id="btnSearch" href="javascript:void(0);" class="btn btn-success" onclick="doSearch()">查询</a>
                         <div class="search-part hide">
 
                         </div>
@@ -73,11 +73,15 @@
 
         <script type="text/javascript">
             $(function() {
-
-
-                renderList("conditionForm", "list-container", "list-template",1);
-
+				
+            	$("#btnSearch").trigger("click");
+            	
             });
+            
+            function doSearch()
+            {
+                renderList("conditionForm", "list-container", "list-template",1);            	
+            }
             
             function openApplyForm(defKey,taskId)
             {
