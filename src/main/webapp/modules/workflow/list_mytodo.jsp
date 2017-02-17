@@ -87,7 +87,7 @@
             
             function openApplyForm(defKey,taskId)
             {
-            	defKey=defKey.split(":")[0];
+            	//defKey=defKey.split(":")[0];
 				
             	var applyFormUrl=contextPath+"/modules/workflow/apply_form.jsp?defKey="+defKey+"&taskId="+taskId;
 
