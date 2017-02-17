@@ -56,6 +56,9 @@ public class WorkflowQueryServlet extends HttpServlet {
 				Map<String, Object> condition=new HashMap<String, Object>();
 				condition.put(ProcessMainVariableNames.PROC_TITLE, request.getParameter(ProcessMainVariableNames.PROC_TITLE));
 				condition.put(ProcessMainVariableNames.PROC_TYPE, request.getParameter(ProcessMainVariableNames.PROC_TYPE));
+				condition.put(ProcessMainVariableNames.PROC_CREATE_TIME+"_START", request.getParameter(ProcessMainVariableNames.PROC_CREATE_TIME+"_START"));
+				condition.put(ProcessMainVariableNames.PROC_CREATE_TIME+"_END", request.getParameter(ProcessMainVariableNames.PROC_CREATE_TIME+"_END"));
+				
 				PageModel<FlowInfoModel> pageModel = workflowQueryManager.getMyTodoListPage(currentUserId, pageNo, 10, condition);
 				myJsonResult.setSuccess(true);
 				myJsonResult.setData(pageModel);
