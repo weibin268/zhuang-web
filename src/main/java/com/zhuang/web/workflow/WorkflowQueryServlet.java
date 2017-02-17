@@ -50,9 +50,10 @@ public class WorkflowQueryServlet extends HttpServlet {
 			
 			if(actionType.equals("mytodo"))
 			{
-				
+			
+				int pageNo=Integer.valueOf(request.getParameter("pageNo"));
 				Map<String, Object> condition=new HashMap<String, Object>();
-			    PageModel<FlowInfoModel> pageModel = workflowQueryManager.getMyTodoListPage(currentUserId, 1, 10, condition);
+			    PageModel<FlowInfoModel> pageModel = workflowQueryManager.getMyTodoListPage(currentUserId, pageNo, 10, condition);
 				myJsonResult.setSuccess(true);
 				myJsonResult.setData(pageModel);
 			    

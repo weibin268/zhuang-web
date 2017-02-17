@@ -6,7 +6,7 @@
 
             <div class="search-panel">
                 <div class="title"><span class="icon-search"></span>查询条件</div>
-                <form id="conditionForm" class="form-inline" action="" method="POST">
+                <form id="conditionForm" class="form-inline" action="<%=request.getContextPath()%>/wf/query?actionType=mytodo" method="POST">
                     <div class="search-form">
                         <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
                         <span>日期：</span><input class="input-small" name="beginDate" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="endDate" type="text" value=""
@@ -74,9 +74,8 @@
         <script type="text/javascript">
             $(function() {
 
-                var url = contextPath + "/wf/query?actionType=mytodo";
 
-                renderList(url, "list-container", "list-template");
+                renderList("conditionForm", "list-container", "list-template",1);
 
             });
             

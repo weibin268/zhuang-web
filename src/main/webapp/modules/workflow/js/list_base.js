@@ -1,15 +1,15 @@
 ﻿
 $(function() {
 
+	initPager();
 
 });
 
-function renderList(url,containerId,templateId,formId)
+function renderList(formId,containerId,templateId,pageNo)
 {
-	if(!formId)
-	{
-		formId="conditionForm";
-	}
+	var url=$("#"+formId).attr("action");
+	
+	url=url+"&pageNo="+pageNo;
 	
 	doPost(url,formId,function(data){
 
@@ -49,6 +49,22 @@ var dateFormat = function (date, format) {
     format = format.replace("mm", m);
     format = format.replace("ss", s);
     return format;
+}
+
+function initPager()
+{
+	$(document).on("click","#list-pager a",function(){
+		
+		$this=$(this);
+		var pageNo=$this.attr("data-pager");
+		var enabled=$this.attr("data-enabled");
+		
+		if(enabled=="true")
+		{
+            renderList("conditionForm", "list-container", "list-template",pageNo);
+		}
+		
+	});	
 }
 
 function doPost(url,formId,success) {
