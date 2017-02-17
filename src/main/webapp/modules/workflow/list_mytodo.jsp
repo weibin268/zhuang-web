@@ -62,7 +62,7 @@
 
                         </td>
                         <td class="overflow center" title="{{$value.applyUser}}">{{$value.applyUser}}</td>
-                        <td class="overflow center" title="{{$value.applyTime}}">{{$value.applyTime}}</td>
+                        <td class="overflow center" title="{{$value.createTime}}">{{$value.createTime}}</td>
                         <td class="overflow center" title="{{$value.currentActivityName}}">{{$value.currentActivityName}}</td>
                         <td class="overflow center" title="{{$value.type}}">{{$value.type}}</td>
                     </tr>
