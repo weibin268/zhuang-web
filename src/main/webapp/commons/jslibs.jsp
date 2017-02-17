@@ -5,6 +5,8 @@
 
 <script type="text/javascript" src="<%= request.getContextPath()%>/js/bootstrap/js/bootstrap.js"></script>
 
+<script type="text/javascript" src="<%= request.getContextPath()%>/js/My97DatePicker/WdatePicker.js"></script>
+
 <script type="text/javascript" src="<%= request.getContextPath()%>/js/artTemplate.js"></script>
 
 <script type="text/javascript">
