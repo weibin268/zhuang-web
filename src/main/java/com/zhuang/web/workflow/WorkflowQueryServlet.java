@@ -17,6 +17,7 @@ import com.zhuang.web.models.MyJsonResult;
 import com.zhuang.web.util.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowQueryManager;
+import com.zhuang.workflow.activiti.ProcessMainVariableNames;
 import com.zhuang.workflow.commons.PageModel;
 import com.zhuang.workflow.models.FlowInfoModel;
 
@@ -53,7 +54,9 @@ public class WorkflowQueryServlet extends HttpServlet {
 			
 				int pageNo=Integer.valueOf(request.getParameter("pageNo"));
 				Map<String, Object> condition=new HashMap<String, Object>();
-			    PageModel<FlowInfoModel> pageModel = workflowQueryManager.getMyTodoListPage(currentUserId, pageNo, 10, condition);
+				condition.put(ProcessMainVariableNames.PROC_TITLE, request.getParameter(ProcessMainVariableNames.PROC_TITLE));
+				condition.put(ProcessMainVariableNames.PROC_TYPE, request.getParameter(ProcessMainVariableNames.PROC_TYPE));
+				PageModel<FlowInfoModel> pageModel = workflowQueryManager.getMyTodoListPage(currentUserId, pageNo, 10, condition);
 				myJsonResult.setSuccess(true);
 				myJsonResult.setData(pageModel);
 			    
