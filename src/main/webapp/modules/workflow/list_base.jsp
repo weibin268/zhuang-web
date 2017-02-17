@@ -24,7 +24,7 @@
                             <li><a href="javascript:void(0);" data-pager="1" data-enabled="{{pageNo>1?'true':'false'}}"><span class="icon-fast-backward"></span>首页</a></li>
                             <li><a href="javascript:void(0);" data-pager="{{pageNo-1}}" data-enabled="{{pageNo-1>0?'true':'false'}}"><span class="icon-backward"></span>上一页</a></li>
                             <li><a href="javascript:void(0);" data-pager="{{pageNo+1}}" data-enabled="{{pageNo+1<=totalPages?'true':'false'}}"><span class="icon-forward"></span>下一页</a></li>
-                            <li><a href="javascript:void(0);" data-pager="{{totalPages}}" data-enabled="{{pageNo<=totalPages?'true':'false'}}"><span class="icon-fast-forward"></span>末页</a></li>
+                            <li><a href="javascript:void(0);" data-pager="{{totalPages}}" data-enabled="{{pageNo<totalPages?'true':'false'}}"><span class="icon-fast-forward"></span>末页</a></li>
                         </ul>
                     </div>
 
