@@ -9,7 +9,7 @@
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal"
 			aria-hidden="true">×</button>
-		<h5>下一步处理人（<span id="spNextTaskName"></span>)</h5>
+		<h5>下一步【<span id="spNextTaskName"></span>】</h5>
 	</div>
 	<div class="modal-body">
 
@@ -18,6 +18,11 @@
 
 
 		<table>
+			<tr>
+				<td colspan="4" style="font-weight:bold;">
+				下一步处理人
+				</td>
+			</tr>
 			<tr>
    
 				<td><select id="selAllUsers" multiple="true" style="height: 200px;">

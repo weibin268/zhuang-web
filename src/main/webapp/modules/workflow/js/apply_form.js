@@ -36,11 +36,19 @@ $(function() {
 				var nextTaskName=objData.data.taskName;
 
 				$selAllUsers=$("#selAllUsers");
+				$selSelectedUsers=$("#selSelectedUsers");
+				
 				$selAllUsers.html("");
 				for(var i=0;i<userList.length;i++)
 				{
 					$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
 					$selAllUsers.append($opt);
+				}
+				
+				if(nextTaskKey=="_endTask_")
+				{
+					$opt=$("<option>").html("系统").val("system");
+					$selSelectedUsers.append($opt);
 				}
 				
 				$("#spNextTaskName").html(nextTaskName);
