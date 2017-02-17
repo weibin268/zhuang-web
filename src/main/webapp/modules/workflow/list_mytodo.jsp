@@ -1,3 +1,7 @@
+
+<%@page import="com.zhuang.workflow.models.ProcDefModel"%>
+<%@page import="java.util.List"%>
+<%@page import="com.zhuang.workflow.WorkflowBeansFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
     <%@ page isELIgnored="false"%>
@@ -10,9 +14,20 @@
                     <div class="search-form">
 
                         <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
-                    	<span>标题：</span><input type="text" name="PROC_TITLE" class="input-medium"/>
-                        <span>申请时间：</span><input class="input-small" name="PROC_CREATE_TIME_START" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="PROC_CREATE_TIME_END" type="text" value=""
-                            onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
+                        <span>标题：</span><input type="text" name="PROC_TITLE" class="input-medium" />
+                        <span>申请时间：</span><input class="input-small" name="PROC_CREATE_TIME_START" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="PROC_CREATE_TIME_END"
+                            type="text" value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
+ 						<span>类型：</span>
+                        <select name="PROC_DEF_KEY" class="input-small">
+                            <option value="">全部</option>
+                            <%
+                            List<ProcDefModel> procDefModels=WorkflowBeansFactory.getWorkflowQueryManager().getProcDefList();
+                            for(ProcDefModel procDefModel:procDefModels)
+                            {%>
+                            <option value="<%=procDefModel.getKey()%>"><%=procDefModel.getName() %></option>                            
+                            <%}%>
+                        </select>
+
                         <a id="btnSearch" href="javascript:void(0);" class="btn btn-success" onclick="doSearch()">查询</a>
                         <div class="search-part hide">
 
@@ -75,22 +90,20 @@
 
         <script type="text/javascript">
             $(function() {
-				
-            	$("#btnSearch").trigger("click");
-            	
-            });
-            
-            function doSearch()
-            {
-                renderList("conditionForm", "list-container", "list-template",1);            	
-            }
-            
-            function openApplyForm(defKey,taskId)
-            {
-            	//defKey=defKey.split(":")[0];
-				
-            	var applyFormUrl=contextPath+"/modules/workflow/apply_form.jsp?defKey="+defKey+"&taskId="+taskId;
 
-				window.open(applyFormUrl);
+                $("#btnSearch").trigger("click");
+
+            });
+
+            function doSearch() {
+                renderList("conditionForm", "list-container", "list-template", 1);
+            }
+
+            function openApplyForm(defKey, taskId) {
+                //defKey=defKey.split(":")[0];
+
+                var applyFormUrl = contextPath + "/modules/workflow/apply_form.jsp?defKey=" + defKey + "&taskId=" + taskId;
+
+                window.open(applyFormUrl);
             }
         </script>

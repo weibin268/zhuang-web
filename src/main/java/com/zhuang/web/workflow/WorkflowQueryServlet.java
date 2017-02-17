@@ -54,6 +54,7 @@ public class WorkflowQueryServlet extends HttpServlet {
 			
 				int pageNo=Integer.valueOf(request.getParameter("pageNo"));
 				Map<String, Object> condition=new HashMap<String, Object>();
+				condition.put(ProcessMainVariableNames.PROC_DEF_KEY, request.getParameter(ProcessMainVariableNames.PROC_DEF_KEY));
 				condition.put(ProcessMainVariableNames.PROC_TITLE, request.getParameter(ProcessMainVariableNames.PROC_TITLE));
 				condition.put(ProcessMainVariableNames.PROC_TYPE, request.getParameter(ProcessMainVariableNames.PROC_TYPE));
 				condition.put(ProcessMainVariableNames.PROC_CREATE_TIME+"_START", request.getParameter(ProcessMainVariableNames.PROC_CREATE_TIME+"_START"));
