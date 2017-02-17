@@ -71,7 +71,7 @@ public class WorkflowQueryServlet extends HttpServlet {
 
 		} finally {
 			response.setCharacterEncoding("UTF-8");
-			Gson gson = new GsonBuilder().create();
+			Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 			gson.toJson(myJsonResult, response.getWriter());
 		}
 		
