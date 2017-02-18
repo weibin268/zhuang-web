@@ -83,7 +83,7 @@ public class WorkflowEngineServlet extends HttpServlet {
 				String[] arrNextUsers = nextUserIds.split(",");
 				List<String> nextUsers = Arrays.asList(arrNextUsers);
 
-				workflowEngine.submit(taskId, nextUsers, comment, formData);
+				workflowEngine.submit(taskId,currentUserId, nextUsers, comment, formData);
 
 				myJsonResult.setSuccess(true);
 				
