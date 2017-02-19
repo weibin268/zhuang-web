@@ -167,7 +167,6 @@ function setFormReadonly() {
 	$("#applyForm input").attr("readonly", "readonly")
 }
 
-
 function validateForm()
 {
 	

@@ -7,7 +7,7 @@
 	<tr>
 		<th>金额：</th>
 		<td><input type="text" id="env_amount" name="env_amount"
-			value="${env_amount}"></input></td>
+			value="${env_amount}" number="true" required></input></td>
 		<th></th>
 		<td></td>
 	</tr>
