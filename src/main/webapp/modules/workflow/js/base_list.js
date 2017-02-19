@@ -3,6 +3,7 @@ $(function() {
 
 	initPager();
 
+	bindEvent();
 });
 
 function renderList(formId,containerId,templateId,pageNo)
@@ -42,6 +43,18 @@ function initPager()
 		}
 		
 	});	
+}
+
+function bindEvent()
+{
+	$(document).keydown(function(event){
+		
+		if(event.which == 13)
+		{
+            $("#btnSearch").trigger("click");
+		}
+	});
+
 }
 
 function doPost(url,formId,success) {
