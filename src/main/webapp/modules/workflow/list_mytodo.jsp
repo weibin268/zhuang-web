@@ -4,54 +4,19 @@
 <%@page import="com.zhuang.workflow.WorkflowBeansFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-    <%@ page isELIgnored="false"%>
+<%@ page isELIgnored="false"%>
 
-        <div class="page-panel">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
-            <div class="search-panel">
-                <div class="title"><span class="icon-search"></span>查询条件</div>
-                <form id="conditionForm" class="form-inline" action="<%=request.getContextPath()%>/wf/query?actionType=mytodo" method="POST">
-                    <div class="search-form">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                        <a href='javascript:void(0);' data-event="expand" data-target=".search-part"><span class="icon-chevron-right" style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
-                        <span>标题：</span><input type="text" name="PROC_TITLE" class="input-medium" />
-                        <span>申请时间：</span><input class="input-small" name="PROC_CREATE_TIME_START" type="text" value="" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })" readonly="readonly" /> - <input class="input-small" name="PROC_CREATE_TIME_END"
-                            type="text" value="" onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })" readonly="readonly" />
- 						<span>类型：</span>
-                        <select name="PROC_DEF_KEY" class="input-small">
-                            <option value="">全部</option>
-                            <%
-                            List<ProcDefModel> procDefModels=WorkflowBeansFactory.getWorkflowQueryManager().getProcDefList();
-                            for(ProcDefModel procDefModel:procDefModels)
-                            {%>
-                            <option value="<%=procDefModel.getKey()%>"><%=procDefModel.getName() %></option>                            
-                            <%}%>
-                        </select>
+<%@ include file="list_base.jsp" %>
 
-                        <a id="btnSearch" href="javascript:void(0);" class="btn btn-success" onclick="doSearch()">查询</a>
-                        <div class="search-part hide">
-
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="grid-panel">
-                <div class="title">
-                    <span style="float:right">
-                        <a href="javascript:void(0);" id="btnExport" class="applybtn"><span class="icon-plus"></span>导出</a>
-                    </span>
-                    我的待办列表
-                </div>
-                <div>
-                    <div id="list-container" class="list-container">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <script id="list-template" type="text/html">
+<script id="list-template" type="text/html">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -88,7 +53,7 @@
             {{include 'pager_template'}}
         </script>
 
-        <script type="text/javascript">
+<script type="text/javascript">
             $(function() {
 
                 $("#btnSearch").trigger("click");
@@ -107,3 +72,59 @@
                 window.open(applyFormUrl);
             }
         </script>
+
+</head>
+
+<body>
+	<div class="page-panel">
+
+		<div class="search-panel">
+			<div class="title">
+				<span class="icon-search"></span>查询条件
+			</div>
+			<form id="conditionForm" class="form-inline"
+				action="<%=request.getContextPath()%>/wf/query?actionType=mytodo"
+				method="POST">
+				<div class="search-form">
+
+					<a href='javascript:void(0);' data-event="expand"
+						data-target=".search-part"><span class="icon-chevron-right"
+						style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
+					<span>标题：</span><input type="text" name="PROC_TITLE"
+						class="input-medium" /> <span>申请时间：</span><input
+						class="input-small" name="PROC_CREATE_TIME_START" type="text"
+						value=""
+						onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })"
+						readonly="readonly" /> - <input class="input-small"
+						name="PROC_CREATE_TIME_END" type="text" value=""
+						onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })"
+						readonly="readonly" /> <span>类型：</span> <select
+						name="PROC_DEF_KEY" class="input-small">
+						<option value="">全部</option>
+						<%
+                            List<ProcDefModel> procDefModels=WorkflowBeansFactory.getWorkflowQueryManager().getProcDefList();
+                            for(ProcDefModel procDefModel:procDefModels)
+                            {%>
+						<option value="<%=procDefModel.getKey()%>"><%=procDefModel.getName() %></option>
+						<%}%>
+					</select> <a id="btnSearch" href="javascript:void(0);"
+						class="btn btn-success" onclick="doSearch()">查询</a>
+					<div class="search-part hide"></div>
+				</div>
+			</form>
+		</div>
+
+		<div class="grid-panel">
+			<div class="title">
+				<span style="float: right"> <a href="javascript:void(0);"
+					id="btnExport" class="applybtn"><span class="icon-plus"></span>导出</a>
+				</span> 我的待办列表
+			</div>
+			<div>
+				<div id="list-container" class="list-container"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
