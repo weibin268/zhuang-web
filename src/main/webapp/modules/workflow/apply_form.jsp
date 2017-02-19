@@ -21,6 +21,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <%@ include file="/commons/base_js_libs.jsp"%>
+<script type="text/javascript" src="<%= request.getContextPath()%>/js/jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath()%>/js/jquery-validation/localization/messages_zh.min.js"></script>
+
+
 <%@ include file="apply_form_init.jsp" %>
 <link type="text/css" rel="stylesheet" href="./css/apply_form.css">
 <script type="text/javascript" src="./js/apply_form.js"></script>

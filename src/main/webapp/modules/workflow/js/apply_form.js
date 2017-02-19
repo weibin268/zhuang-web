@@ -2,11 +2,15 @@
 
 var $actionType;
 
+var $validateForm;
+
 $(function() {
 
 	if (!(isFirstTask == true && isRunningTask == true)&&!hasTask) {
 		setFormReadonly();
 	}
+	
+	$validateForm = $("#applyForm").validate();
 
 });
 
@@ -98,6 +102,8 @@ $(function() {
 	
 	$("#toolbar_save").click(
 			function() {
+
+				if(!validateForm()) return false;
 				
 				doPost("save",function(data) {
 					var objData = eval("(" + data + ")");
@@ -159,4 +165,20 @@ function doPost(actionType,success) {
 
 function setFormReadonly() {
 	$("#applyForm input").attr("readonly", "readonly")
+}
+
+
+function validateForm()
+{
+	
+	var result=false;
+	
+	result = $validateForm.form();
+
+	if(typeof( myValidateForm)=="function")
+	{
+		result=myValidateForm();
+	}
+	
+	return result;
 }

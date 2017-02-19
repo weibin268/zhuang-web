@@ -12,7 +12,7 @@
 						<th>标题：</th>
 						<td colspan="3"><input type="text" id="env_PROC_TITLE"
 							name="env_PROC_TITLE" value="${env_PROC_TITLE}"
-							style="width: 95%"></input></td>
+							style="width: 95%" required ></input></td>
 
 					</tr>
 
