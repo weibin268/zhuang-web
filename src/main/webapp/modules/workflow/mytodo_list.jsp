@@ -14,7 +14,7 @@
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<%@ include file="list_base.jsp" %>
+<%@ include file="base_list.jsp" %>
 
 <script id="list-template" type="text/html">
             <table class="table table-striped">
