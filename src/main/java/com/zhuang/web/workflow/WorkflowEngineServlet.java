@@ -15,7 +15,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.zhuang.web.models.MyJsonResult;
-import com.zhuang.web.util.WorkflowUtil;
+import com.zhuang.web.workflow.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowEngine;
 import com.zhuang.workflow.models.NextTaskInfoModel;
