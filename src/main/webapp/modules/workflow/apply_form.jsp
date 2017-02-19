@@ -1,4 +1,4 @@
-<%@page import="com.zhuang.workflow.models.WorkflowChoiceOptions"%>
+<%@page import="com.zhuang.workflow.enums.WorkflowChoiceOptions"%>
 <%@page import="com.zhuang.workflow.impl.ActivitiWorkflowEngine"%>
 <%@page import="org.activiti.engine.repository.ProcessDefinition"%>
 <%@page import="java.util.HashMap"%>
