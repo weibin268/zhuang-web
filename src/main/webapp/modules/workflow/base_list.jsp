@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 
-<%@ include file="/commons/jslibs.jsp"%>
+<%@ include file="/commons/base_js_libs.jsp"%>
 
 <link type="text/css" rel="stylesheet" href="./css/base_list.css">
 <script type="text/javascript" src="./js/base_list.js"></script>

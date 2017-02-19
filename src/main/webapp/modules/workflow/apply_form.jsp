@@ -20,7 +20,7 @@
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<%@ include file="/commons/jslibs.jsp"%>
+<%@ include file="/commons/base_js_libs.jsp"%>
 <%@ include file="apply_form_init.jsp" %>
 <link type="text/css" rel="stylesheet" href="./css/apply_form.css">
 <script type="text/javascript" src="./js/apply_form.js"></script>
