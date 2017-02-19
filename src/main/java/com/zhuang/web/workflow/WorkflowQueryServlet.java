@@ -17,7 +17,7 @@ import com.zhuang.web.models.MyJsonResult;
 import com.zhuang.web.util.WorkflowUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowQueryManager;
-import com.zhuang.workflow.activiti.ProcessMainVariableNames;
+import com.zhuang.workflow.enums.ProcessMainVariableNames;
 import com.zhuang.workflow.commons.PageModel;
 import com.zhuang.workflow.models.FlowInfoModel;
 

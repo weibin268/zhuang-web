@@ -22,6 +22,6 @@ public class WorkflowUtil {
 	}
 	
 	public static String getCurrentUserId() {
-		return "zwb";
+		return "ls";
 	}
 }
