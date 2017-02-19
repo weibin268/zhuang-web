@@ -1,3 +1,4 @@
+<%@page import="com.zhuang.workflow.enums.WorkflowChoiceOptions"%>
 <%@page import="org.activiti.engine.repository.ProcessDefinition"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="com.zhuang.workflow.activiti.ProcessDefinitionManager"%>
@@ -54,37 +55,37 @@
 
 	formUrl = "./forms/" + formName;
 	
-	if(request.getAttribute("toolbar_delete")==null)
+	if(request.getAttribute(WorkflowChoiceOptions.DELETE)==null)
 	{
 		if(request.getAttribute("isFirstTask")==null || (request.getAttribute("isFirstTask").toString()=="true" && request.getAttribute("isRunningTask").toString()=="true"))
 		{
-	request.setAttribute("toolbar_delete",true);
+	request.setAttribute(WorkflowChoiceOptions.DELETE,true);
 		}else
 		{
-	request.setAttribute("toolbar_delete",false);
+	request.setAttribute(WorkflowChoiceOptions.DELETE,false);
 		}
 	}
 	
-	if(request.getAttribute("toolbar_back")==null)
+	if(request.getAttribute(WorkflowChoiceOptions.BACK)==null)
 	{
-		request.setAttribute("toolbar_back",false);
+		request.setAttribute(WorkflowChoiceOptions.BACK,false);
 	}
 	
-	if(request.getAttribute("toolbar_submit")==null)
+	if(request.getAttribute(WorkflowChoiceOptions.SUBMIT)==null)
 	{
 		if( request.getAttribute("isRunningTask")==null || request.getAttribute("isRunningTask").toString()=="true")
 		{
-	request.setAttribute("toolbar_submit",true);
+	request.setAttribute(WorkflowChoiceOptions.SUBMIT,true);
 		}else{
-	request.setAttribute("toolbar_submit",false);
+	request.setAttribute(WorkflowChoiceOptions.SUBMIT,false);
 		}
 	}
 	
-	if (request.getAttribute("toolbar_save") == null) {
+	if (request.getAttribute(WorkflowChoiceOptions.SAVE) == null) {
 		if (request.getAttribute("isFirstTask") == null || (request.getAttribute("isFirstTask").toString() == "true" && request.getAttribute("isRunningTask").toString() == "true" )) {
-			request.setAttribute("toolbar_save", true);
+			request.setAttribute(WorkflowChoiceOptions.SAVE, true);
 		} else {
-			request.setAttribute("toolbar_save", false);
+			request.setAttribute(WorkflowChoiceOptions.SAVE, false);
 		}
 	}
 	

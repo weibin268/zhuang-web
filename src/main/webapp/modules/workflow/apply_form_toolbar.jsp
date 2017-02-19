@@ -1,4 +1,5 @@
-﻿<%@page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@page import="com.zhuang.workflow.enums.WorkflowChoiceOptions"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 
@@ -14,7 +15,7 @@
 				</div>
 			</div>
 		</a>
-		<%if (request.getAttribute("toolbar_save").toString()=="true"){%>
+		<%if (request.getAttribute(WorkflowChoiceOptions.SAVE).toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_save">
 			<div class="button-panel">
 
@@ -27,7 +28,7 @@
 			</div>
 		</a>
 		<% }%>
-		<%if (request.getAttribute("toolbar_submit").toString()=="true"){%>
+		<%if (request.getAttribute(WorkflowChoiceOptions.SUBMIT).toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_submit">
 			<div class="button-panel">
 
@@ -40,7 +41,7 @@
 			</div>
 		</a>
 		<% }%>
-		<%if (request.getAttribute("toolbar_back").toString()=="true"){%>
+		<%if (request.getAttribute(WorkflowChoiceOptions.BACK).toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_back">
 			<div class="button-panel">
 
@@ -53,7 +54,7 @@
 			</div>
 		</a>
 		<% }%>
-		<%if (request.getAttribute("toolbar_delete").toString()=="true"){%>
+		<%if (request.getAttribute(WorkflowChoiceOptions.DELETE).toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_delete">
 			<div class="button-panel">
 
