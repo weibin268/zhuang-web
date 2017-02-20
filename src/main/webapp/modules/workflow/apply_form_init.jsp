@@ -1,3 +1,4 @@
+<%@page import="com.zhuang.workflow.enums.FormDataVariableNames"%>
 <%@page import="com.zhuang.workflow.enums.WorkflowChoiceOptions"%>
 <%@page import="org.activiti.engine.repository.ProcessDefinition"%>
 <%@page import="java.util.HashMap"%>
@@ -31,8 +32,8 @@
 	} else {
 		ProcessDefinitionManager processDefinitionManager = WorkflowBeansFactory.getProcessDefinitionManager();
 		ProcessDefinition processDefinition = processDefinitionManager.getProcessDefinitionEntityByKey(defKey);
-		formData.put("proDefKey", processDefinition.getKey());
-		formData.put("proDefName", processDefinition.getName());
+		formData.put(FormDataVariableNames.PRO_DEF_KEY, processDefinition.getKey());
+		formData.put(FormDataVariableNames.PRO_DEF_NAME, processDefinition.getName());
 
 	}
 
@@ -57,32 +58,38 @@
 	
 	if(request.getAttribute(WorkflowChoiceOptions.DELETE)==null)
 	{
-		if(request.getAttribute("isFirstTask")==null || (request.getAttribute("isFirstTask").toString()=="true" && request.getAttribute("isRunningTask").toString()=="true"))
+		if(request.getAttribute(FormDataVariableNames.IS_FIRST_TASK)==null || ((Boolean)request.getAttribute(FormDataVariableNames.IS_FIRST_TASK)==true && (Boolean)request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK)==true))
 		{
-	request.setAttribute(WorkflowChoiceOptions.DELETE,true);
+			request.setAttribute(WorkflowChoiceOptions.DELETE,true);
 		}else
 		{
-	request.setAttribute(WorkflowChoiceOptions.DELETE,false);
+			request.setAttribute(WorkflowChoiceOptions.DELETE,false);
 		}
 	}
 	
 	if(request.getAttribute(WorkflowChoiceOptions.BACK)==null)
 	{
 		request.setAttribute(WorkflowChoiceOptions.BACK,false);
+	}else
+	{
+		if(!(Boolean)request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK))
+		{
+			request.setAttribute(WorkflowChoiceOptions.BACK,false);
+		}
 	}
 	
 	if(request.getAttribute(WorkflowChoiceOptions.SUBMIT)==null)
 	{
-		if( request.getAttribute("isRunningTask")==null || request.getAttribute("isRunningTask").toString()=="true")
+		if( request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK)==null || (Boolean)request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK)== true )
 		{
-	request.setAttribute(WorkflowChoiceOptions.SUBMIT,true);
+			request.setAttribute(WorkflowChoiceOptions.SUBMIT,true);
 		}else{
-	request.setAttribute(WorkflowChoiceOptions.SUBMIT,false);
+			request.setAttribute(WorkflowChoiceOptions.SUBMIT,false);
 		}
 	}
 	
 	if (request.getAttribute(WorkflowChoiceOptions.SAVE) == null) {
-		if (request.getAttribute("isFirstTask") == null || (request.getAttribute("isFirstTask").toString() == "true" && request.getAttribute("isRunningTask").toString() == "true" )) {
+		if (request.getAttribute(FormDataVariableNames.IS_FIRST_TASK) == null || ((Boolean)request.getAttribute(FormDataVariableNames.IS_FIRST_TASK) == true  && (Boolean)request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK) == true )) {
 			request.setAttribute(WorkflowChoiceOptions.SAVE, true);
 		} else {
 			request.setAttribute(WorkflowChoiceOptions.SAVE, false);
