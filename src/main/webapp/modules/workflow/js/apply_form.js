@@ -19,59 +19,13 @@ $(function() {
 	$actionType = $("#actionType");
 
 	$("#toolbar_submit").click(function() {
-
-		if($("#taskId").val()=="")
-		{
-			alert("请先保存！");
-			return false;
-		}
-
-		$("#env_choice").val("提交");
-		
-		init_apply_form_submit();
-		
-		doPost("retrieveNextTaskUsers",function(data){
-			
-			var objData = eval("(" + data + ")");
-			if (objData.success) {
-
-				var userList=objData.data.users ;
-				var nextTaskKey=objData.data.taskKey;
-				var nextTaskName=objData.data.taskName;
-
-				$selAllUsers=$("#selAllUsers");
-				$selSelectedUsers=$("#selSelectedUsers");
-				
-				$selAllUsers.html("");
-				for(var i=0;i<userList.length;i++)
-				{
-					$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
-					$selAllUsers.append($opt);
-				}
-				
-				if(nextTaskKey=="_endTask_")
-				{
-					$opt=$("<option>").html("系统").val("system");
-					$selSelectedUsers.append($opt);
-				}
-				
-				$("#spNextTaskName").html(nextTaskName);
-				
-			} else {
-				debugger;
-				alert(objData.message);
-			}
-			
-		});
-		
-		$("#submit-dialog").modal("show");
-		// doPost();
+		doSubmit("提交");
 	});
 
 	$("#toolbar_back").click(function() {
 		
-		doPost("back");
-		
+		doSubmit("退回");
+
 	});
 
 	$("#toolbar_delete").click(function() {
@@ -180,4 +134,55 @@ function validateForm()
 	}
 	
 	return result;
+}
+
+
+function doSubmit(choice)
+{
+	if($("#taskId").val()=="")
+	{
+		alert("请先保存！");
+		return false;
+	}
+
+	$("#env_choice").val(choice);
+	
+	init_apply_form_submit();
+	
+	doPost("retrieveNextTaskUsers",function(data){
+		
+		var objData = eval("(" + data + ")");
+		if (objData.success) {
+
+			var userList=objData.data.users ;
+			var nextTaskKey=objData.data.taskKey;
+			var nextTaskName=objData.data.taskName;
+
+			$selAllUsers=$("#selAllUsers");
+			$selSelectedUsers=$("#selSelectedUsers");
+			
+			$selAllUsers.html("");
+			for(var i=0;i<userList.length;i++)
+			{
+				$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
+				$selAllUsers.append($opt);
+			}
+			
+			if(nextTaskKey=="_endTask_")
+			{
+				$opt=$("<option>").html("系统").val("system");
+				$selSelectedUsers.append($opt);
+			}
+			
+			$("#spNextTaskName").html(nextTaskName);
+			
+		} else {
+			debugger;
+			alert(objData.message);
+		}
+		
+	});
+	
+	$("#submit-dialog").modal("show");
+	
 }
