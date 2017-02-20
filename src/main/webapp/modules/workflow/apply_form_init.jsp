@@ -70,12 +70,6 @@
 	if(request.getAttribute(WorkflowChoiceOptions.BACK)==null)
 	{
 		request.setAttribute(WorkflowChoiceOptions.BACK,false);
-	}else
-	{
-		if(!(Boolean)request.getAttribute(FormDataVariableNames.IS_RUNNING_TASK))
-		{
-			request.setAttribute(WorkflowChoiceOptions.BACK,false);
-		}
 	}
 	
 	if(request.getAttribute(WorkflowChoiceOptions.SUBMIT)==null)
