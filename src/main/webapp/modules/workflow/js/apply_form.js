@@ -162,10 +162,17 @@ function doSubmit(choice)
 			$selSelectedUsers=$("#selSelectedUsers");
 			
 			$selAllUsers.html("");
-			for(var i=0;i<userList.length;i++)
+			
+			if(userList.length>1)
 			{
-				$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
-				$selAllUsers.append($opt);
+				for(var i=0;i<userList.length;i++)
+				{
+					$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
+					$selAllUsers.append($opt);
+				}
+			}else {
+				$opt=$("<option>").html(userList[0].userName).val(userList[0].userId);	
+				$selSelectedUsers.append($opt);
 			}
 			
 			if(nextTaskKey=="_endTask_")
