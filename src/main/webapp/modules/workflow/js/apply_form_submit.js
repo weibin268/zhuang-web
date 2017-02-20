@@ -48,6 +48,8 @@
             return false;
         }
 
+        if(!validateForm()) return false;
+        
     	var arrUserIds=[];
         
     	for(var i=0;i<$options.length;i++)

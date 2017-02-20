@@ -19,7 +19,9 @@ $(function() {
 	$actionType = $("#actionType");
 
 	$("#toolbar_submit").click(function() {
+		
 		doSubmit("提交");
+	
 	});
 
 	$("#toolbar_back").click(function() {

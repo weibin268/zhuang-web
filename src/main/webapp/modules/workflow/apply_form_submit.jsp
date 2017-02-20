@@ -15,12 +15,15 @@
 
 		<input id="nextUserIds" name="nextUserIds" type="hidden"
 			value=""></input>
-
-
+			
 		<table>
 			<tr>
-				<td colspan="4" style="font-weight:bold;">
-				下一步处理人
+				<td colspan="2" style="font-weight:bold;">
+				下一步处理人（待选）
+				</td>
+
+				<td colspan="2" style="font-weight:bold;">
+				下一步处理人（已选）
 				</td>
 			</tr>
 			<tr>
@@ -48,7 +51,7 @@
 
 			<tr>
 				<td colspan="4">
-					<textarea id="comment" name="comment" rows="3" style="width:97%;">${comment}</textarea>
+					<textarea id="comment" name="comment" rows="3" style="width:97%;" required>${comment}</textarea>
 				</td>
 			</tr>
 
