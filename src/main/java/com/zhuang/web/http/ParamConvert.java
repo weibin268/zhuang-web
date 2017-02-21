@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class ParamConvert {
 
 	public static String toString(Map<String, String> param) {
@@ -17,7 +19,7 @@ public class ParamConvert {
 			lsParam.add(entry.getKey() + "=" + entry.getValue());
 		}
 
-		result = String.join("&", lsParam);
+		result = StringUtils.join("&", lsParam);
 
 		return result;
 
