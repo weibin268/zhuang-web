@@ -19,7 +19,7 @@ public class ParamConvert {
 			lsParam.add(entry.getKey() + "=" + entry.getValue());
 		}
 
-		result = StringUtils.join("&", lsParam);
+		result = StringUtils.join(lsParam,"&");
 
 		return result;
 
