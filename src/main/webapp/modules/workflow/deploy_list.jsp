@@ -83,7 +83,7 @@
 						<input type="text" name="不知道为什么只一个 Text的时候回车会提交表单" style="display:none;"
 						class="input-medium" />
 					
-						<span>类型：</span> <select
+						<span>流程定义：</span> <select
 						name="procDefKey" class="input-small">
 						<option value="">全部</option>
 						<%
