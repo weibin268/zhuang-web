@@ -105,7 +105,7 @@
 		<div class="grid-panel">
 			<div class="title">
 				<span style="float: right"> <a href="javascript:void(0);"
-					id="btnAdd"><span class="icon-plus"></span>添加</a>
+					id="btnAdd"><span class="icon-plus"></span>添加部暑</a>
 				</span>流程部暑列表
 			</div>
 			<div>
