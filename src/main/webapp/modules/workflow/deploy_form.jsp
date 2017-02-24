@@ -10,7 +10,7 @@
 
 </head>
 <body>
-	<form method="POST" enctype="multipart/form-data" action="<%=request.getContextPath()%>/wf/deploy">
+	<form method="POST" enctype="multipart/form-data" action="<%=request.getContextPath()%>/wf/deploy?actionType=upload">
 		部暑文件: <input type="file" name="upfile"> 
 		<input type="submit" value="上传并部暑">
 	</form>
