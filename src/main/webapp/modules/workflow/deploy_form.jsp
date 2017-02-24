@@ -11,9 +11,8 @@
 </head>
 <body>
 	<form method="POST" enctype="multipart/form-data" action="<%=request.getContextPath()%>/wf/deploy">
-		File to upload: <input type="file" name="upfile"><br /> Notes
-		about the file: <input type="text" name="note"><br /> <br /> <input
-			type="submit" value="Press"> to upload the file!
+		部暑文件: <input type="file" name="upfile"> 
+		<input type="submit" value="上传并部暑">
 	</form>
 </body>
 </html>
