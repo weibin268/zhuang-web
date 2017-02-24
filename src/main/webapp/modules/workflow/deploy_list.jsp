@@ -79,6 +79,10 @@
 						style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
 						<span>部暑名称：</span><input type="text" name="deployName"
 						class="input-medium" />
+					
+						<input type="text" name="不知道为什么只一个 Text的时候回车会提交表单" style="display:none;"
+						class="input-medium" />
+					
 						<span>类型：</span> <select
 						name="procDefKey" class="input-small">
 						<option value="">全部</option>
@@ -88,7 +92,10 @@
                             {%>
 						<option value="<%=procDefModel.getKey()%>"><%=procDefModel.getName() %></option>
 						<%}%>
-					</select> <a id="btnSearch" href="javascript:void(0);"
+					</select>
+					
+					
+					 <a id="btnSearch" href="javascript:void(0);"
 						class="btn btn-success" onclick="doSearch()">查询</a>
 					<div class="search-part hide"></div>
 				</div>
