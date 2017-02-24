@@ -22,6 +22,7 @@ import com.zhuang.web.util.FileUploadUtil;
 import com.zhuang.workflow.WorkflowBeansFactory;
 import com.zhuang.workflow.WorkflowDeployment;
 import com.zhuang.workflow.commons.PageModel;
+import com.zhuang.workflow.enums.DeploymentInfoNames;
 import com.zhuang.workflow.models.DeploymentInfoModel;
 import com.zhuang.workflow.models.FlowInfoModel;
 
@@ -69,6 +70,9 @@ public class WorkflowDeploymentServlet extends HttpServlet {
 				int pageNo = Integer.valueOf(request.getParameter("pageNo"));
 				Map<String, Object> condition = new HashMap<String, Object>();
 
+				condition.put(DeploymentInfoNames.DEPLOY_NAME, request.getParameter(DeploymentInfoNames.DEPLOY_NAME));
+				condition.put(DeploymentInfoNames.PROC_DEF_KEY, request.getParameter(DeploymentInfoNames.PROC_DEF_KEY));
+				
 				WorkflowDeployment workflowDeployment = WorkflowBeansFactory.getWorkflowDeployment();
 				PageModel<DeploymentInfoModel> pageModel = workflowDeployment.getDeploymentInfoPage(pageNo, 10,
 						condition);

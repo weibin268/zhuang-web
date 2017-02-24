@@ -34,7 +34,7 @@
                     </tr>
                     {{else}} {{each list}}
                     <tr>
-                        <td class="overflow center" title="{{$value.name}}">{{$value.name}}</td>
+                        <td class="overflow center" title="{{$value.deployName}}">{{$value.deployName}}</td>
                         <td class="overflow center" title="{{$value.deployTime}}">{{$value.deployTime}}</td>
                         <td class="overflow center" title="{{$value.procDefName}}">{{$value.procDefName}}</td>
                         <td class="overflow center" title="{{$value.procDefVersion}}">{{$value.procDefVersion}}</td>
@@ -77,16 +77,10 @@
 					<a href='javascript:void(0);' data-event="expand"
 						data-target=".search-part"><span class="icon-chevron-right"
 						style="height: 14px;"></span><span style="margin: 0px;">展开</span></a>
-					<span>标题：</span><input type="text" name="PROC_TITLE"
-						class="input-medium" /> <span>申请时间：</span><input
-						class="input-small" name="PROC_CREATE_TIME_START" type="text"
-						value=""
-						onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', readOnly: true })"
-						readonly="readonly" /> - <input class="input-small"
-						name="PROC_CREATE_TIME_END" type="text" value=""
-						onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })"
-						readonly="readonly" /> <span>类型：</span> <select
-						name="PROC_DEF_KEY" class="input-small">
+						<span>部暑名称：</span><input type="text" name="deployName"
+						class="input-medium" />
+						<span>类型：</span> <select
+						name="procDefKey" class="input-small">
 						<option value="">全部</option>
 						<%
                             List<ProcDefModel> procDefModels=WorkflowBeansFactory.getWorkflowQueryManager().getProcDefList();
