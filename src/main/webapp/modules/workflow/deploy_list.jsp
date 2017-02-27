@@ -52,10 +52,29 @@
 
                 $("#btnSearch").trigger("click");
 
+                
+                $("#btnAddDeploy").click(function(){
+                	
+                	var url="deploy_form.jsp";
+                	
+                	openWindow(url,500,200);
+                	
+                });
             });
 
             function doSearch() {
                 renderList("conditionForm", "list-container", "list-template", 1);
+            }
+            
+            function reflashList()
+            {
+                $("#btnSearch").trigger("click");
+            }
+            
+            function openWindow(url, iWidth, iHeight) {
+                var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+                var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+                window.open(url, '_blank', 'width=' + iWidth + ',height=' + iHeight + ',resizable=no,top=' + iTop + ',left=' + iLeft);
             }
             
         </script>
@@ -105,7 +124,7 @@
 		<div class="grid-panel">
 			<div class="title">
 				<span style="float: right"> <a href="javascript:void(0);"
-					id="btnAdd"><span class="icon-plus"></span>添加部暑</a>
+					id="btnAddDeploy"><span class="icon-plus"></span>添加部暑</a>
 				</span>流程部暑列表
 			</div>
 			<div>

@@ -55,7 +55,7 @@ public class WorkflowDeploymentServlet extends HttpServlet {
 				WorkflowBeansFactory.getWorkflowDeployment().deployByInputStream(fileItem.getName(), inputStream);
 
 				response.setCharacterEncoding("UTF-8");
-				response.getWriter().write("<script>alert('部暑成功!');window.close();</script>");
+				response.getWriter().write("<script>alert('部暑成功!');opener.reflashList();window.close();</script>");
 
 			} catch (FileUploadException e) {
 				// TODO Auto-generated catch block
