@@ -81,7 +81,7 @@ public class WorkflowQueryServlet extends HttpServlet {
 				myJsonResult.setSuccess(true);
 				myJsonResult.setData(pageModel);
 			    
-			}else if (actionType.equals("procdeflist")) {
+			}else if (actionType.equals("myprocdef")) {
 				
 				List<ProcDefModel> procDefModels = workflowQueryManager.getProcDefList();
 				
