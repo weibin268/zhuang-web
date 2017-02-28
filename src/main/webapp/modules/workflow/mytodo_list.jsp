@@ -55,9 +55,12 @@
 
 <script type="text/javascript">
             $(function() {
-
+            	
+            	initData();
+            	
                 $("#btnSearch").trigger("click");
 
+                
             });
 
             function doSearch() {
@@ -70,6 +73,31 @@
                 var applyFormUrl = contextPath + "/modules/workflow/apply_form.jsp?defKey=" + defKey + "&taskId=" + taskId;
 
                 window.open(applyFormUrl);
+            }
+            
+            function initData()
+            {
+            	$procDefKey=$("#PROC_DEF_KEY");
+            	
+            	doPost('<%=request.getContextPath()%>/wf/query?actionType=myprocdef',"conditionForm",function(data){
+					
+            		var objData=eval("("+data+")");
+					if(objData.success)
+					{
+						var procDefList=objData.data;
+						for(var i=0;i<procDefList.length;i++)
+						{
+							var key=procDefList[i].key;
+							var name=procDefList[i].name;
+							$procDefKey.append($('<option>').val(key).html(name));
+						}
+					}else
+					{
+						debugger;
+						alert(objData.message);
+					}
+		
+            	});
             }
         </script>
 
@@ -98,15 +126,10 @@
 						readonly="readonly" /> - <input class="input-small"
 						name="PROC_CREATE_TIME_END" type="text" value=""
 						onclick="WdatePicker({ dateFmt:'yyyy-MM-dd' , readOnly:true })"
-						readonly="readonly" /> <span>类型：</span> <select
+						readonly="readonly" /> <span>类型：</span> <select id="PROC_DEF_KEY"
 						name="PROC_DEF_KEY" class="input-small">
 						<option value="">全部</option>
-						<%
-                            List<ProcDefModel> procDefModels=WorkflowBeansFactory.getWorkflowQueryManager().getProcDefList();
-                            for(ProcDefModel procDefModel:procDefModels)
-                            {%>
-						<option value="<%=procDefModel.getKey()%>"><%=procDefModel.getName() %></option>
-						<%}%>
+						
 					</select> <a id="btnSearch" href="javascript:void(0);"
 						class="btn btn-success" onclick="doSearch()">查询</a>
 					<div class="search-part hide"></div>
