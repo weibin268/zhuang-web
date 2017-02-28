@@ -2,6 +2,7 @@ package com.zhuang.web.workflow;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ import com.zhuang.workflow.WorkflowQueryManager;
 import com.zhuang.workflow.enums.ProcessMainVariableNames;
 import com.zhuang.workflow.commons.PageModel;
 import com.zhuang.workflow.models.FlowInfoModel;
+import com.zhuang.workflow.models.ProcDefModel;
 
 /**
  * Servlet implementation class WorkflowQueryServlet
@@ -79,6 +81,12 @@ public class WorkflowQueryServlet extends HttpServlet {
 				myJsonResult.setSuccess(true);
 				myJsonResult.setData(pageModel);
 			    
+			}else if (actionType.equals("procdeflist")) {
+				
+				List<ProcDefModel> procDefModels = workflowQueryManager.getProcDefList();
+				
+				myJsonResult.setSuccess(true);
+				myJsonResult.setData(procDefModels);
 			}
 			
 			
