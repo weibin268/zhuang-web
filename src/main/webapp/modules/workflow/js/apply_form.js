@@ -172,7 +172,7 @@ function doSubmit(choice)
 					$opt=$("<option>").html(userList[i].userName).val(userList[i].userId);
 					$selAllUsers.append($opt);
 				}
-			}else {
+			} else if (userList.length == 1) {
 				$opt=$("<option>").html(userList[0].userName).val(userList[0].userId);	
 				$selSelectedUsers.append($opt);
 			}
