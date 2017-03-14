@@ -54,6 +54,34 @@
 			</div>
 		</a>
 		<% }%>
+		
+		<%if (request.getAttribute(WorkflowChoiceOptions.APPROVE).toString()=="true"){%>
+		<a href="javascript:void(0);" id="toolbar_approve">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img src="<%=request.getContextPath()%>/images/workflow/submit.png" height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>批准</span>
+				</div>
+			</div>
+		</a>
+		<% }%>
+		<%if (request.getAttribute(WorkflowChoiceOptions.REJECT).toString()=="true"){%>
+		<a href="javascript:void(0);" id="toolbar_reject">
+			<div class="button-panel">
+
+				<div class="pic">
+					<img src="<%=request.getContextPath()%>/images/workflow/back.png" height="29" width="29" />
+				</div>
+				<div class="content">
+					<span>驳回</span>
+				</div>
+			</div>
+		</a>
+		<% }%>
+		
 		<%if (request.getAttribute(WorkflowChoiceOptions.DELETE).toString()=="true"){%>
 		<a href="javascript:void(0);" id="toolbar_delete">
 			<div class="button-panel">

@@ -18,6 +18,7 @@
 		<constructor-arg>
 			<map>
 				<entry key="test02" value-ref="test01ActionListener"></entry>
+				<entry key="CountersignTest" value-ref="test01ActionListener"></entry>
 			</map>
 		</constructor-arg>
 	</bean>

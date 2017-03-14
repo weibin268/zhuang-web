@@ -29,6 +29,24 @@ $(function() {
 		doSubmit("退回");
 
 	});
+	
+	$("#toolbar_back").click(function() {
+		
+		doSubmit("退回");
+
+	});
+	
+	$("#toolbar_approve").click(function() {
+		
+		doSubmit("批准");
+
+	});
+
+	$("#toolbar_reject").click(function() {
+		
+		doSubmit("驳回");
+
+	});
 
 	$("#toolbar_delete").click(function() {
 		

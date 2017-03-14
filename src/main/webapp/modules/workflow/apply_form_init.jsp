@@ -90,6 +90,17 @@
 		}
 	}
 	
+	if(request.getAttribute(WorkflowChoiceOptions.APPROVE)==null)
+	{
+		request.setAttribute(WorkflowChoiceOptions.APPROVE,false);
+	}
+	
+	if(request.getAttribute(WorkflowChoiceOptions.REJECT)==null)
+	{
+		request.setAttribute(WorkflowChoiceOptions.REJECT,false);
+	}
+	
+	
 %>
 <script type="text/javascript">
 
