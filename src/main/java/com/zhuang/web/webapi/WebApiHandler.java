@@ -29,6 +29,12 @@ public class WebApiHandler {
 		String action = request.getParameter(ACTION_NAME);
 		String args = request.getParameter(ARGS_NAME);
 
+		
+		if(action==null || action =="")
+		{
+			throw new RuntimeException("“action”参数不能为空！");
+		}
+		
 		jsonResult.setSuccess(true);
 		jsonResult.setValid(true);
 
