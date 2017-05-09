@@ -24,7 +24,7 @@ public class WebApiServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		WebApiHandler.handle(request, response);
+		WebApiHandler.handle(request, response,BaseController.class.getPackage().getName());
 	}
 
 	/**

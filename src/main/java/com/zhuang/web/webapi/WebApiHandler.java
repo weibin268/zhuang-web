@@ -12,7 +12,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 
-
 public class WebApiHandler {
 
 	public static final String CONTROLER_SUFFIX = "Controller";
@@ -23,7 +22,7 @@ public class WebApiHandler {
 
 	public static final String CONTROLLER_ACTION_SEPARATOR = "-";
 
-	public static void handle(HttpServletRequest request, HttpServletResponse response)
+	public static void handle(HttpServletRequest request, HttpServletResponse response, String controllerPkgName)
 			throws JsonIOException, IOException {
 
 		WebApiJsonResult jsonResult = new WebApiJsonResult();
@@ -39,7 +38,7 @@ public class WebApiHandler {
 			String controllerName = arrAction[0];
 			String actionName = arrAction[1];
 
-			String controllerFullName = getControllerFullName(controllerName);
+			String controllerFullName = getControllerFullName(controllerPkgName, controllerName);
 
 			Class controllerClass = Class.forName(controllerFullName);
 
@@ -63,21 +62,19 @@ public class WebApiHandler {
 		} catch (Throwable ex) {
 
 			Throwable innerEx = ex.getCause();
-			
-			if(innerEx!=null)
-			{
-				ex=innerEx;
+
+			if (innerEx != null) {
+				ex = innerEx;
 			}
-			
-			if(ex  instanceof WebApiException)
-			{
+
+			if (ex instanceof WebApiException) {
 				jsonResult.setValid(false);
-			}else {
+			} else {
 				jsonResult.setSuccess(false);
 				jsonResult.setValid(false);
 				jsonResult.setData(ExceptionUtils.getStackTrace(ex));
 			}
-			
+
 			jsonResult.setMessage(ex.getMessage());
 
 		} finally {
@@ -91,10 +88,9 @@ public class WebApiHandler {
 
 	}
 
-	private static String getControllerFullName(String controllerName) {
+	private static String getControllerFullName(String pkgName, String controllerName) {
 
-		String pkgName = BaseController.class.getPackage().getName();
-		return pkgName + "." + controllerName + "Controller";
+		return pkgName + "." + controllerName + CONTROLER_SUFFIX;
 
 	}
 
