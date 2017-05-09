@@ -58,6 +58,9 @@ public class WebApiHandler {
 			Method actionMethod = controllerClass.getMethod(actionName, WebApiContext.class);
 			
 			WebApiContext context=new WebApiContext();
+			context.setRequest(request);
+			context.setResponse(response);
+			context.setResult(myJsonResult);
 			
 			Object objActionResult = actionMethod.invoke(controllerClass.newInstance(), context);
 			
@@ -69,9 +72,6 @@ public class WebApiHandler {
 				}
 			}
 			
-			//myJsonResult.setData(objActionResult);
-			
-
 		} catch (Exception e) {
 			
 			myJsonResult.setSuccess(false);
