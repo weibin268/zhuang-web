@@ -4,11 +4,13 @@ public class TestController extends  BaseController{
 
 	public void test(WebApiContext context) {
 		
-		System.out.println(context.getRequest().getParameter("action"));
+		BaseArgs args = super.getArgs(context, BaseArgs.class);
 		
-		context.getResult().setMessage("zwb---");
+		System.out.println(args.getUserId());
 		
-		throw new WebApiException("×¯Î°±ó");
+		//context.getResult().setMessage("zwb---");
+
+		//throw new WebApiException("×¯Î°±ó");
 		
 		//return true;
 		
