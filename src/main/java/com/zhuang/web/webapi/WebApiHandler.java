@@ -27,74 +27,76 @@ import com.zhuang.workflow.models.NextTaskInfoModel;
 public class WebApiHandler {
 
 	public static final String CONTROLER_SUFFIX = "Controller";
-	
+
 	public static final String ACTION_NAME = "action";
-	
+
 	public static final String ARGS_NAME = "args";
-	
+
 	public static final String CONTROLLER_ACTION_SEPARATOR = "-";
-	
-	
-	
-	public  static void handle(HttpServletRequest request, HttpServletResponse response) throws JsonIOException, IOException {
-		
+
+	public static void handle(HttpServletRequest request, HttpServletResponse response)
+			throws JsonIOException, IOException {
+
 		MyJsonResult myJsonResult = new MyJsonResult();
 		String action = request.getParameter(ACTION_NAME);
 		String args = request.getParameter(ARGS_NAME);
-		
+
 		myJsonResult.setSuccess(true);
-		
+
 		try {
-			
+
 			String[] arrAction = action.split(CONTROLLER_ACTION_SEPARATOR);
-			String controllerName=arrAction[0];
-			String actionName=arrAction[1];
+			String controllerName = arrAction[0];
+			String actionName = arrAction[1];
 
 			String controllerFullName = getControllerFullName(controllerName);
 
+			Class controllerClass = Class.forName(controllerFullName);
 
-			Class controllerClass= Class.forName(controllerFullName);
-			
 			Method actionMethod = controllerClass.getMethod(actionName, WebApiContext.class);
-			
-			WebApiContext context=new WebApiContext();
+
+			WebApiContext context = new WebApiContext();
 			context.setRequest(request);
 			context.setResponse(response);
 			context.setResult(myJsonResult);
 			
+
 			Object objActionResult = actionMethod.invoke(controllerClass.newInstance(), context);
-			
-			if(objActionResult !=null && objActionResult instanceof Boolean)
-			{
-				if((Boolean)objActionResult==false)
-				{
+
+			if (objActionResult != null && objActionResult instanceof Boolean) {
+				if ((Boolean) objActionResult == false) {
 					return;
 				}
 			}
+
+		} catch (Throwable ex) {
+
+			Throwable innerEx = ex.getCause();
 			
-		} catch (Exception e) {
+			if(innerEx!=null)
+			{
+				ex=innerEx;
+			}
 			
 			myJsonResult.setSuccess(false);
-			myJsonResult.setMessage(e.getMessage());
-			myJsonResult.setData(ExceptionUtils.getStackTrace(e));
-		
-		}finally {
-			
-		
+			myJsonResult.setMessage(ex.getMessage());
+			myJsonResult.setData(ExceptionUtils.getStackTrace(ex));
+
+		} finally {
+
 		}
 
-		
 		response.setCharacterEncoding("UTF-8");
-		Gson gson=new GsonBuilder().serializeNulls().create();
-		gson.toJson(myJsonResult,response.getWriter());
-		
+		Gson gson = new GsonBuilder().serializeNulls().create();
+		gson.toJson(myJsonResult, response.getWriter());
+
 	}
-	
+
 	private static String getControllerFullName(String controllerName) {
-		
+
 		String pkgName = BaseController.class.getPackage().getName();
-		return pkgName+"."+controllerName+"Controller";
-	
+		return pkgName + "." + controllerName + "Controller";
+
 	}
-	
+
 }
