@@ -9,6 +9,12 @@ public class BaseController {
     {
     	Gson gson = new GsonBuilder().serializeNulls().create();
     	
+    	if(context.getArgs()==null || context.getArgs()=="")
+    	{
+    		
+    		throw new RuntimeException("“args”参数不能为空！");
+    	}
+    	
 		T result = gson.fromJson(context.getArgs(), argsType);
 
 		result.init();
