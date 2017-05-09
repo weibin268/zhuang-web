@@ -8,7 +8,7 @@ public class TestController extends  BaseController{
 		
 		context.getResult().setMessage("zwb---");
 		
-//		throw new RuntimeException("zwb");
+		throw new WebApiException("×¯Î°±ó");
 		
 		//return true;
 		
