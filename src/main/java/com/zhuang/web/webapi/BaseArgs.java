@@ -2,6 +2,12 @@ package com.zhuang.web.webapi;
 
 public class BaseArgs {
 
+	private String userId;
+
+	public void	init() {
+		
+	}
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -9,7 +15,4 @@ public class BaseArgs {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
-	private String userId;
-	
 }

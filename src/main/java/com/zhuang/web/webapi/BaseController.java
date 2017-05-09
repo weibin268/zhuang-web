@@ -5,12 +5,14 @@ import com.google.gson.GsonBuilder;
 
 public class BaseController {
 
-    public <T> T getArgs(WebApiContext context,Class<T> argsType)
+    public <T extends BaseArgs> T getArgs(WebApiContext context,Class<T> argsType)
     {
     	Gson gson = new GsonBuilder().serializeNulls().create();
     	
 		T result = gson.fromJson(context.getArgs(), argsType);
 
+		result.init();
+		
     	return result;
     }
 }
