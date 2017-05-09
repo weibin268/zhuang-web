@@ -1,28 +1,18 @@
 package com.zhuang.web.webapi;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.fail;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.aspectj.weaver.ast.Var;
+import org.hamcrest.core.IsInstanceOf;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
-import com.zhuang.web.models.MyJsonResult;
-import com.zhuang.web.workflow.WorkflowUtil;
-import com.zhuang.workflow.WorkflowBeansFactory;
-import com.zhuang.workflow.WorkflowEngine;
-import com.zhuang.workflow.models.NextTaskInfoModel;
+
 
 public class WebApiHandler {
 
@@ -37,11 +27,12 @@ public class WebApiHandler {
 	public static void handle(HttpServletRequest request, HttpServletResponse response)
 			throws JsonIOException, IOException {
 
-		MyJsonResult myJsonResult = new MyJsonResult();
+		WebApiJsonResult jsonResult = new WebApiJsonResult();
 		String action = request.getParameter(ACTION_NAME);
 		String args = request.getParameter(ARGS_NAME);
 
-		myJsonResult.setSuccess(true);
+		jsonResult.setSuccess(true);
+		jsonResult.setValid(true);
 
 		try {
 
@@ -58,7 +49,7 @@ public class WebApiHandler {
 			WebApiContext context = new WebApiContext();
 			context.setRequest(request);
 			context.setResponse(response);
-			context.setResult(myJsonResult);
+			context.setResult(jsonResult);
 			
 
 			Object objActionResult = actionMethod.invoke(controllerClass.newInstance(), context);
@@ -78,9 +69,16 @@ public class WebApiHandler {
 				ex=innerEx;
 			}
 			
-			myJsonResult.setSuccess(false);
-			myJsonResult.setMessage(ex.getMessage());
-			myJsonResult.setData(ExceptionUtils.getStackTrace(ex));
+			if(ex  instanceof WebApiException)
+			{
+				jsonResult.setValid(false);
+			}else {
+				jsonResult.setSuccess(false);
+				jsonResult.setValid(false);
+				jsonResult.setData(ExceptionUtils.getStackTrace(ex));
+			}
+			
+			jsonResult.setMessage(ex.getMessage());
 
 		} finally {
 
@@ -89,7 +87,7 @@ public class WebApiHandler {
 		response.setHeader("Content-type", "text/plain;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		Gson gson = new GsonBuilder().serializeNulls().create();
-		gson.toJson(myJsonResult, response.getWriter());
+		gson.toJson(jsonResult, response.getWriter());
 
 	}
 

@@ -11,7 +11,7 @@ public class WebApiContext {
 
 	private HttpServletResponse response;
 
-	private MyJsonResult result;
+	private WebApiJsonResult result;
 
 	public HttpServletRequest getRequest() {
 		return request;
@@ -29,11 +29,11 @@ public class WebApiContext {
 		this.response = response;
 	}
 
-	public MyJsonResult getResult() {
+	public WebApiJsonResult getResult() {
 		return result;
 	}
 
-	public void setResult(MyJsonResult result) {
+	public void setResult(WebApiJsonResult result) {
 		this.result = result;
 	}
 }
