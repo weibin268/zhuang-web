@@ -85,7 +85,7 @@ public class WebApiHandler {
 
 		
 		response.setCharacterEncoding("UTF-8");
-		Gson gson=new GsonBuilder().create();
+		Gson gson=new GsonBuilder().serializeNulls().create();
 		gson.toJson(myJsonResult,response.getWriter());
 		
 	}
