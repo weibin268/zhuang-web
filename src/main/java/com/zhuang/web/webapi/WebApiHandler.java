@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.hamcrest.core.IsInstanceOf;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,8 @@ public class WebApiHandler {
 			context.setRequest(request);
 			context.setResponse(response);
 			context.setResult(jsonResult);
-			
+			context.setAction(action);
+			context.setArgs(args);
 
 			Object objActionResult = actionMethod.invoke(controllerClass.newInstance(), context);
 

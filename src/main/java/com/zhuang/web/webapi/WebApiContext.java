@@ -13,6 +13,10 @@ public class WebApiContext {
 
 	private WebApiJsonResult result;
 
+	private String action;
+	
+	private String args;
+	
 	public HttpServletRequest getRequest() {
 		return request;
 	}
@@ -36,4 +40,22 @@ public class WebApiContext {
 	public void setResult(WebApiJsonResult result) {
 		this.result = result;
 	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
+	public String getArgs() {
+		return args;
+	}
+
+	public void setArgs(String args) {
+		this.args = args;
+	}
+	
+	
 }
