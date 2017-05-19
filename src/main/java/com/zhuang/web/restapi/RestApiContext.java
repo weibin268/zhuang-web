@@ -1,17 +1,17 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zhuang.web.models.MyJsonResult;
 
-public class WebApiContext {
+public class RestApiContext {
 
 	private HttpServletRequest request;
 
 	private HttpServletResponse response;
 
-	private WebApiJsonResult result;
+	private RestApiJsonResult result;
 
 	private String action;
 	
@@ -33,11 +33,11 @@ public class WebApiContext {
 		this.response = response;
 	}
 
-	public WebApiJsonResult getResult() {
+	public RestApiJsonResult getResult() {
 		return result;
 	}
 
-	public void setResult(WebApiJsonResult result) {
+	public void setResult(RestApiJsonResult result) {
 		this.result = result;
 	}
 

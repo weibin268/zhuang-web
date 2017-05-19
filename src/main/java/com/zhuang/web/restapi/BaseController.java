@@ -1,11 +1,11 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class BaseController {
 
-    public <T extends BaseArgs> T getArgs(WebApiContext context,Class<T> argsType)
+    public <T extends BaseArgs> T getArgs(RestApiContext context,Class<T> argsType)
     {
     	Gson gson = new GsonBuilder().serializeNulls().create();
     	

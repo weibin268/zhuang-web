@@ -1,8 +1,8 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 public class TestController extends  BaseController{
 
-	public void test(WebApiContext context) {
+	public void test(RestApiContext context) {
 		
 		BaseArgs args = super.getArgs(context, BaseArgs.class);
 		

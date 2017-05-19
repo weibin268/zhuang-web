@@ -1,4 +1,4 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 public class BaseArgs {
 

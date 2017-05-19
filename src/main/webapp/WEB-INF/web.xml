@@ -23,10 +23,10 @@
   	<servlet-class>com.zhuang.web.workflow.WorkflowDeploymentServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>WebApiServlet</servlet-name>
-  	<display-name>WebApiServlet</display-name>
+  	<servlet-name>RestApiServlet</servlet-name>
+  	<display-name>RestApiServlet</display-name>
   	<description></description>
-  	<servlet-class>com.zhuang.web.webapi.WebApiServlet</servlet-class>
+  	<servlet-class>com.zhuang.web.restapi.RestApiServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>WorkflowQueryServlet</servlet-name>
@@ -52,7 +52,7 @@
   </servlet-mapping>
   
     <servlet-mapping>
-  	<servlet-name>WebApiServlet</servlet-name>
-  	<url-pattern>/webapi</url-pattern>
+  	<servlet-name>RestApiServlet</servlet-name>
+  	<url-pattern>/restapi</url-pattern>
   </servlet-mapping>
 </web-app>

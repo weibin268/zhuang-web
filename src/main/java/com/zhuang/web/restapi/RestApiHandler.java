@@ -1,4 +1,4 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 
-public class WebApiHandler {
+public class RestApiHandler {
 
 	public static final String CONTROLER_SUFFIX = "Controller";
 
@@ -25,7 +25,7 @@ public class WebApiHandler {
 	public static void handle(HttpServletRequest request, HttpServletResponse response, String controllerPkgName)
 			throws JsonIOException, IOException {
 
-		WebApiJsonResult jsonResult = new WebApiJsonResult();
+		RestApiJsonResult jsonResult = new RestApiJsonResult();
 		String action = request.getParameter(ACTION_NAME);
 		String args = request.getParameter(ARGS_NAME);
 
@@ -48,9 +48,9 @@ public class WebApiHandler {
 
 			Class controllerClass = Class.forName(controllerFullName);
 
-			Method actionMethod = controllerClass.getMethod(actionName, WebApiContext.class);
+			Method actionMethod = controllerClass.getMethod(actionName, RestApiContext.class);
 
-			WebApiContext context = new WebApiContext();
+			RestApiContext context = new RestApiContext();
 			context.setRequest(request);
 			context.setResponse(response);
 			context.setResult(jsonResult);
@@ -73,7 +73,7 @@ public class WebApiHandler {
 				ex = innerEx;
 			}
 
-			if (ex instanceof WebApiException) {
+			if (ex instanceof RestApiException) {
 				jsonResult.setValid(false);
 			} else {
 				jsonResult.setSuccess(false);

@@ -1,4 +1,4 @@
-package com.zhuang.web.webapi;
+package com.zhuang.web.restapi;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class WebApiServlet
  */
-public class WebApiServlet extends HttpServlet {
+public class RestApiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public WebApiServlet() {
+    public RestApiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,7 +24,7 @@ public class WebApiServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		WebApiHandler.handle(request, response,BaseController.class.getPackage().getName());
+		RestApiHandler.handle(request, response,BaseController.class.getPackage().getName());
 	}
 
 	/**
