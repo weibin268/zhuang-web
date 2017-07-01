@@ -1,0 +1,17 @@
+package com.zhuang.web.restapi.args;
+
+import com.zhuang.web.restapi.BaseArgs;
+
+public class DataArgs<T> extends BaseArgs {
+
+	private T data;
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+	
+}

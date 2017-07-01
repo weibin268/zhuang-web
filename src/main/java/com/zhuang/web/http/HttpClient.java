@@ -91,7 +91,7 @@ public class HttpClient {
 		return result;
 	}
 
-	public String sendPost(String url, String param) throws Exception {
+	public String sendPost(String url, String param) {
 		PrintWriter out = null;
 		BufferedReader in = null;
 		String result = "";
@@ -120,7 +120,7 @@ public class HttpClient {
 				result += line;
 			}
 		} catch (Exception e) {
-			throw new Exception("发送 POST 请求出现异常！", e);
+			throw new RuntimeException("发送 POST 请求出现异常！", e);
 		}
 		finally {
 			try {
