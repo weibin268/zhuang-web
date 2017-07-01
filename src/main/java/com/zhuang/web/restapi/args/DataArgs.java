@@ -6,7 +6,7 @@ public class DataArgs<T> extends BaseArgs {
 
 	private T data;
 
-	public Object getData() {
+	public T getData() {
 		return data;
 	}
 

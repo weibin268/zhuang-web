@@ -25,14 +25,14 @@ public class UserControllerTest {
 
 		DataArgs dataArgs=new DataArgs();
 		dataArgs.setUserId("zwb");
-		User data=new User();
+		User user=new User();
 		
-		data.setId("01");
+		user.setId("01");
+		user.setName("zwb");
 		
-		dataArgs.setData(data);
+		dataArgs.setData(user);
 
 		Gson gson = new GsonBuilder().serializeNulls().create();
-		System.out.println(gson.toJson(dataArgs));
 
 		String strArgs = "args="+gson.toJson(dataArgs);
 

@@ -1,5 +1,6 @@
 package com.zhuang.web.upms;
 
+import com.google.gson.reflect.TypeToken;
 import com.zhuang.upms.models.User;
 import com.zhuang.upms.services.UserService;
 import com.zhuang.web.restapi.BaseArgs;
@@ -24,7 +25,7 @@ public class UserController extends BaseController {
 
 	public void save(RestApiContext context) {
 
-		DataArgs<User> args = super.getArgs(context, DataArgs.class);
+		DataArgs<User> args = super.getArgs(context, new TypeToken<DataArgs<User>>(){}.getType());
 
 		User user=(User)args.getData();
 		
