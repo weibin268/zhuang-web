@@ -3,6 +3,7 @@
 	<name>zhuang-web</name>
 	<comment></comment>
 	<projects>
+		<project>zhuang-upms</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
