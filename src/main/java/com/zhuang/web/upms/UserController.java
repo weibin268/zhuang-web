@@ -3,6 +3,7 @@ package com.zhuang.web.upms;
 import com.zhuang.upms.models.User;
 import com.zhuang.upms.services.UserService;
 import com.zhuang.web.restapi.BaseArgs;
+import com.zhuang.web.restapi.BaseController;
 import com.zhuang.web.restapi.RestApiContext;
 
 public class UserController extends  BaseController{

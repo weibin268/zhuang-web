@@ -26,7 +26,7 @@ public class RestApiServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RestApiHandler.handle(request, response,BaseController.class.getPackage().getName());
+		RestApiHandler.handle(request, response,RestApiServlet.class.getPackage().getName());
 	}
 
 	/**
