@@ -1,9 +1,15 @@
 
+var settings={
+    apiUrl:"/zhuang-web/upmsapi"
+}
+
+function getApiUrl() {
+    return settings.apiUrl;
+}
+
 function doPost(action,data,successHandler) {
 
-    var url= "/zhuang-web/upmsapi?action=";
-
-    $.ajax(url+action,
+    $.ajax(getApiUrl()+"?action="+action,
         {
             type : "POST",
             data : data,
@@ -31,3 +37,7 @@ function doPost(action,data,successHandler) {
         });
 
 }
+
+jQuery(function () {
+    jQuery(".easyui-datagrid").attr("url",getApiUrl()+"?action=Base-pageList&sql="+jQuery(".easyui-datagrid").attr("sql"));
+})
