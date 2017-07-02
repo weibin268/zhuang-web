@@ -3,3 +3,5 @@ document.write("<link rel='stylesheet' href='../../../js/jquery-easyui/themes/ic
 document.write( "<script src='../../../js/jquery-easyui/jquery.min.js'></script>");
 document.write("<script src='../../../js/jquery-easyui/jquery.easyui.min.js'></script>");
 document.write("<script src='../../../js/jquery-easyui/locale/easyui-lang-zh_CN.js'></script>");
+
+document.write("<script src='../js/ajax-util.js'></script>");

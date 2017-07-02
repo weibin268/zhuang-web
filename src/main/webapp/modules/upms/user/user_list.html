@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+    <script src="../js/tab-lib.js"></script>
+
+    <script type="text/javascript">
+
+            doPost("User-test",null,function (data,msg) {
+                alert(JSON.stringify(data));
+              })
+            
+    </script>
 </head>
 <body>
-    aa
+<a href="#" title="This is the tooltip message." class="easyui-tooltip">Hover me</a>
 </body>
 </html>
