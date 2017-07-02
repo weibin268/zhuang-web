@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.zhuang.data.DbAccessor;
 import com.zhuang.data.models.PageInfo;
-import com.zhuang.upms.models.User;
 import com.zhuang.web.restapi.RestApiContext;
 import com.zhuang.web.restapi.results.EasyUIPaginationResult;
 
@@ -19,11 +18,12 @@ public class BaseController extends com.zhuang.web.restapi.BaseController {
 		Integer rows= Integer.parseInt(context.getRequest().getParameter("rows"));		
 		String sql=context.getRequest().getParameter("sql");
 		
-		EasyUIPaginationResult<User> result=new EasyUIPaginationResult<User>();
+		EasyUIPaginationResult<Object> result=new EasyUIPaginationResult<Object>();
 	
 		PageInfo pageInfo=new PageInfo(page, rows, "Id");
-		List<User> users = dbAccessor.pageQueryEntities(sql, pageInfo, null, User.class);
-		result.setRows(users);
+		
+		List<Object> models = dbAccessor.pageQueryEntities(sql, pageInfo, null, Object.class);
+		result.setRows(models);
 		
 		result.setTotal(pageInfo.getTotalRowCount());
 	
