@@ -8,13 +8,28 @@
 
     <script type="text/javascript">
 
-            doPost("User-test",null,function (data,msg) {
+        /*    doPost("User-test",null,function (data,msg) {
                 alert(JSON.stringify(data));
               })
-            
+*/
+
+
     </script>
 </head>
 <body>
-<a href="#" title="This is the tooltip message." class="easyui-tooltip">Hover me</a>
+<table id="tt" class="easyui-datagrid" style="width:700px;height:250px"
+       url="/zhuang-web/upmsapi?action=User-listPage"
+       title="Load Data" iconCls="icon-save"
+       rownumbers="true" pagination="true">
+    <thead>
+    <tr>
+        <th field="id" width="80">Id</th>
+        <th field="name" width="120">Name</th>
+        <th field="loginId" width="80" align="right">LoginId</th>
+        <th field="status" width="60" align="center">Stauts</th>
+    </tr>
+    </thead>
+</table>
+
 </body>
 </html>

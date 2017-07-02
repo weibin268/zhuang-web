@@ -12,7 +12,7 @@
 	<!-- <typeAliases> <package name="com.zhuang.autocode.models"/> </typeAliases> -->
 
 	<plugins>
-		<plugin interceptor="com.zhuang.data.mybatis.interceptor.PaginationInterceptor"></plugin>
+		<plugin interceptor="com.zhuang.data.mybatis.interceptor.PaginationInterceptor4legacy"></plugin>
 	</plugins>
 
 	<environments default="development">
@@ -36,9 +36,8 @@
 	</databaseIdProvider>
  -->
 	<mappers>
-	
-<!-- 		<mapper resource="com/zhuang/autocode/models/SysAutoCodeMapper.xml" />
-		<mapper resource="com/zhuang/autocode/models/SysAutoCodeDetailMapper.xml" /> -->
+
+		<mapper resource="com/zhuang/upms/sqlxml/SysUser.xml" />
 		
 	</mappers>
 

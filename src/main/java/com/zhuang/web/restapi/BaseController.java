@@ -7,6 +7,12 @@ import com.google.gson.GsonBuilder;
 
 public class BaseController {
 
+	Gson gson = new GsonBuilder().serializeNulls().create();
+	
+	public Gson getGson() {
+		return gson;
+	}
+	
 	public <T extends BaseArgs> T getArgs(RestApiContext context, Class<T> argsClass) {
 
 		return getArgsInternal(context, argsClass);
@@ -18,7 +24,6 @@ public class BaseController {
 	}
 
 	private <T extends BaseArgs> T getArgsInternal(RestApiContext context, Object argsObject) {
-		Gson gson = new GsonBuilder().serializeNulls().create();
 
 		if (context.getArgs() == null || context.getArgs() == "") {
 
