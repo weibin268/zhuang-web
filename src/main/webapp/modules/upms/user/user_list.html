@@ -15,10 +15,12 @@
 
 
     </script>
+
+
 </head>
 <body>
-<table id="tt" class="easyui-datagrid" style="width:700px;height:250px"
-       url="/zhuang-web/upmsapi?action=User-listPage"
+<table id="tt" class="easyui-datagrid" style="width:100%;height:500px;"
+       url="/zhuang-web/upmsapi?action=Base-pageList&sql=com.zhuang.upms.sqlxml.SysUser.selectPage"
        title="Load Data" iconCls="icon-save"
        rownumbers="true" pagination="true">
     <thead>

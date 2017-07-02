@@ -18,7 +18,6 @@ import com.zhuang.web.restapi.results.EasyUIPaginationResult;
 public class UserController extends BaseController {
 
 	UserService userService = new UserService();
-	DbAccessor dbAccessor=DbAccessor.get();
 	
 	public void test(RestApiContext context) {
 
@@ -40,23 +39,4 @@ public class UserController extends BaseController {
 		System.out.println(user);
 	}
 	
-	public boolean listPage(RestApiContext context) throws IOException {
-
-		Integer page= Integer.parseInt(context.getRequest().getParameter("page"));
-		Integer rows= Integer.parseInt(context.getRequest().getParameter("rows"));		
-		
-		EasyUIPaginationResult<User> result=new EasyUIPaginationResult<User>();
-		
-		result.setTotal(page);
-	
-		PageInfo pageInfo=new PageInfo(1, 10, "Id");
-		List<User> users = dbAccessor.pageQueryEntities("com.zhuang.upms.sqlxml.SysUser.selectPage", pageInfo, null, User.class);
-		result.setRows(users);
-
-		String strResult=super.getGson().toJson(result);
-		context.getResponse().getWriter().append(strResult);
-	
-		return false;
-	}
-
 }
