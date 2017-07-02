@@ -28,6 +28,8 @@ public class BaseController extends com.zhuang.web.restapi.BaseController {
 	
 		PageInfo pageInfo=new PageInfo(page, rows, "Id");
 		
+		System.out.println(mapParam);
+		
 		List<Object> models = dbAccessor.pageQueryEntities(sql, pageInfo, mapParam, Object.class);
 		result.setRows(models);
 		
