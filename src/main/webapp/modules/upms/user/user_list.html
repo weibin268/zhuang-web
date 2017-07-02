@@ -12,25 +12,53 @@
                 alert(JSON.stringify(data));
               })
 */
+		function f_search() {
+
+			var obj = $(document.forms["filter"]).serialize();
+			
+			$("#dg").datagrid("reload",{param:obj});
+
+		}
 
     </script>
 
 </head>
 <body>
-<table id="tt" class="easyui-datagrid" style="width:100%;height:500px;"
+<table id="dg" class="easyui-datagrid" style="width:100%;height:500px;"
        sql="com.zhuang.upms.sqlxml.SysUser.selectPage"
-       title="Load Data" iconCls="icon-save"
-       rownumbers="true" pagination="true">
+       rownumbers="true" pagination="true"
+       toolbar="#dg-toolbar">
+      
     <thead>
     <tr>
         <th field="id" width="80">Id</th>
-        <th field="name" width="120">Name</th>
-        <th field="loginId" width="80" align="right">LoginId</th>
+        <th field="name" width="120">姓名</th>
+        <th field="loginId" width="80" align="right">登录帐号</th>
         <th field="status" width="60" align="center">Stauts</th>
     </tr>
     </thead>
 </table>
 
+<div id="dg-toolbar" style="padding:5px;height:auto;display:none;">
+    <div style="margin-bottom:5px">
+        <a href="javascript:void(0);" onclick="f_Add();" class="easyui-linkbutton" iconcls="icon-add" plain="true">新增</a>
+        <a href="javascript:void(0);" onclick="f_Edit();" class="easyui-linkbutton" iconcls="icon-edit" plain="true">修改</a>
+        <a href="javascript:void(0);" onclick="f_Delete();" class="easyui-linkbutton" iconcls="icon-remove" plain="true">删除</a>
+    </div>
+    <div>
+        <form name="filter">
+            登录名：<input name="loginId" class="textbox" type="text" style="width:150px">
+            姓名：<input name="name" class="textbox" type="text" style="width:150px">
+            性别：
+            <select class="easyui-combobox" id="selSex" name="sex" data-options="required:true">
+                <option value="">全部</option>
+                <option value="M">男</option>
+                <option value="F">女</option>
+            </select>
+            <a href="javascript:void(0);" onclick="f_search();" class="easyui-linkbutton" iconcls="icon-search">查询</a>
+        </form>
+    </div>
+</div>
 </body>
 
 </html>

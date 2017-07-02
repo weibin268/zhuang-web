@@ -1,6 +1,7 @@
 package com.zhuang.web.http;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -24,5 +25,32 @@ public class ParamConvert {
 		return result;
 
 	}
+	
+
+
+	public static Map<String, Object> toMap(String param) {
+
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+
+		if(param==null ||param=="")
+		{
+			return result;
+		}
+		
+	    String[] arrParam =	param.split("&");
+		
+	    for (String strParam : arrParam) {
+	    	
+	    	String[] arrP = strParam.split("=");
+	    	result.put(arrP[0], arrP.length>1?arrP[1]:"");
+	    	
+	    }
+		
+		return result;
+	}
+	
+	
+
 
 }

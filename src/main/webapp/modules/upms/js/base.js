@@ -38,6 +38,10 @@ function doPost(action,data,successHandler) {
 
 }
 
+
 jQuery(function () {
-    jQuery(".easyui-datagrid").attr("url",getApiUrl()+"?action=Base-pageList&sql="+jQuery(".easyui-datagrid").attr("sql"));
+	
+	var $datagrid=jQuery(".easyui-datagrid");
+	$datagrid.attr("url",getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql"));
+
 })

@@ -31,7 +31,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/zhuang-workflow-0.0.1.jar" sourcepath="/zhuang-workflow"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/zhuang-data-0.0.1-SNAPSHOT.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/zhuang-upms"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/zhuang-data"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

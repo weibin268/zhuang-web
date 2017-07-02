@@ -4,6 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>zhuang-upms</project>
+		<project>zhuang-data</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
