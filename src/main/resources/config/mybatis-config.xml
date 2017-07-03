@@ -5,10 +5,10 @@
 	<!-- <properties resource="com/zhuang/autocode/config/sqlserver.properties"></properties> -->
 	<properties resource="config/jdbc.properties"></properties>
 
-<!-- 	<settings>
+	<settings>
 		<setting name="logImpl" value="LOG4J" />
 	</settings>
- -->
+
 	<!-- <typeAliases> <package name="com.zhuang.autocode.models"/> </typeAliases> -->
 
 	<plugins>
