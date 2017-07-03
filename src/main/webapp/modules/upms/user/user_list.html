@@ -13,15 +13,23 @@
         });
 
         function doSearch() {
-
-		    var url=$("#dg").attr("url_");
-		    
-		    $("#dg").datagrid("options").url=url;
-
-			var obj = $(document.forms["filter"]).serialize();
-			
-			$("#dg").datagrid("reload",{param:obj});
+            $dg=$("#dg");
+            $dg.datagrid("options").url=$dg.attr("url_");
+			var dgFormData = $(document.forms["dg-form"]).serialize();
+			$("#dg").datagrid("reload",{param:dgFormData});
 		}
+
+		function openAdd() {
+            alert("openAdd");
+        }
+
+        function openEdit() {
+            alert("openEdit");
+        }
+
+        function doDelete() {
+            alert("doDelete");
+        }
 
     </script>
 
@@ -44,12 +52,12 @@
 
 <div id="dg-toolbar" style="padding:5px;height:auto;display:none;">
     <div style="margin-bottom:5px">
-        <a href="javascript:void(0);" onclick="f_Add();" class="easyui-linkbutton" iconcls="icon-add" plain="true">新增</a>
-        <a href="javascript:void(0);" onclick="f_Edit();" class="easyui-linkbutton" iconcls="icon-edit" plain="true">修改</a>
-        <a href="javascript:void(0);" onclick="f_Delete();" class="easyui-linkbutton" iconcls="icon-remove" plain="true">删除</a>
+        <a href="javascript:void(0);" onclick="openAdd();" class="easyui-linkbutton" iconcls="icon-add" plain="true">新增</a>
+        <a href="javascript:void(0);" onclick="openEdit();" class="easyui-linkbutton" iconcls="icon-edit" plain="true">修改</a>
+        <a href="javascript:void(0);" onclick="doDelete();" class="easyui-linkbutton" iconcls="icon-remove" plain="true">删除</a>
     </div>
     <div>
-        <form name="filter">
+        <form name="dg-form">
             登录名：<input name="loginId" class="textbox" type="text" style="width:150px">
             姓名：<input name="name" class="textbox" type="text" style="width:150px">
             性别：
