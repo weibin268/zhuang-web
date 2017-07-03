@@ -1,15 +1,15 @@
 
-var settings={
+var g_settings={
     apiUrl:"/zhuang-web/upmsapi"
 }
 
-function getApiUrl() {
-    return settings.apiUrl;
+function f_getApiUrl() {
+    return g_settings.apiUrl;
 }
 
-function doPost(action,data,successHandler) {
+function f_post(action,data,successHandler) {
 
-    $.ajax(getApiUrl()+"?action="+action,
+    $.ajax(f_getApiUrl()+"?action="+action,
         {
             type : "POST",
             data : data,
@@ -38,13 +38,18 @@ function doPost(action,data,successHandler) {
 
 }
 
+function f_initDatagrid()
+{
+    var $datagrid=jQuery(".easyui-datagrid");
+
+    var url=f_getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql");
+
+    //$datagrid.attr("url",url);
+    $datagrid.attr("url_",url);
+}
 
 jQuery(function () {
-	
-	var $datagrid=jQuery(".easyui-datagrid");
-	var url=getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql");
+    f_initDatagrid();
+});
 
-	//$datagrid.attr("url",url);
-    $datagrid.attr("url_",url);
 
-})
