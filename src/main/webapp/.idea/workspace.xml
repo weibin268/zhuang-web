@@ -15,14 +15,14 @@
       <file leaf-file-name="user_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/upms/user/user_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="714">
+              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1499063132265" expanded="false" signature="1023:1040" ph="..." />
-                <marker date="1499063132265" expanded="false" signature="1540:1551" ph="..." />
-                <marker date="1499063132265" expanded="false" signature="1623:1634" ph="..." />
+                <marker date="1499095604295" expanded="false" signature="1194:1211" ph="..." />
+                <marker date="1499095604295" expanded="false" signature="1711:1722" ph="..." />
+                <marker date="1499095604295" expanded="false" signature="1794:1805" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,8 +67,8 @@
       <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/upms/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            <state relative-caret-position="699">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -168,8 +168,9 @@
         <option value="$PROJECT_DIR$/modules/upms/js/tab-lib.js" />
         <option value="$PROJECT_DIR$/modules/upms/js/tab-ref.js" />
         <option value="$PROJECT_DIR$/modules/upms/js/main_tab_ref.js" />
-        <option value="$PROJECT_DIR$/modules/upms/user/user_list.html" />
         <option value="$PROJECT_DIR$/js/jquery-easyui/jquery.easyui.min.js" />
+        <option value="$PROJECT_DIR$/modules/upms/js/base.js" />
+        <option value="$PROJECT_DIR$/modules/upms/user/user_list.html" />
       </list>
     </option>
   </component>
@@ -731,7 +732,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24253000" />
+    <option name="totallyTimeSpent" value="25940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1934" height="1042" extended-state="0" />
@@ -891,9 +892,9 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1499063132265" expanded="false" signature="1023:1040" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1540:1551" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1623:1634" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1194:1211" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1711:1722" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1794:1805" ph="..." />
           </folding>
         </state>
       </provider>
@@ -990,9 +991,9 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1499063132265" expanded="false" signature="1023:1040" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1540:1551" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1623:1634" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1194:1211" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1711:1722" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1794:1805" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1241,22 +1242,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/upms/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state relative-caret-position="699">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/upms/user/user_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="714">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1499063132265" expanded="false" signature="1023:1040" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1540:1551" ph="..." />
-            <marker date="1499063132265" expanded="false" signature="1623:1634" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1194:1211" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1711:1722" ph="..." />
+            <marker date="1499095604295" expanded="false" signature="1794:1805" ph="..." />
           </folding>
         </state>
       </provider>

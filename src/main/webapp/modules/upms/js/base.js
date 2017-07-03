@@ -42,6 +42,9 @@ function doPost(action,data,successHandler) {
 jQuery(function () {
 	
 	var $datagrid=jQuery(".easyui-datagrid");
-	$datagrid.attr("url",getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql"));
+	var url=getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql");
+
+	//$datagrid.attr("url",url);
+    $datagrid.attr("url_",url);
 
 })

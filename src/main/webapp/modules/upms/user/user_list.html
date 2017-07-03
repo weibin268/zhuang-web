@@ -12,12 +12,21 @@
                 alert(JSON.stringify(data));
               })
 */
-		function f_search() {
+        
+	
+        jQuery(function () {
+            f_search();
+        });
+
+        function f_search() {
+
+		    var url=$("#dg").attr("url_");
+		    
+		    $("#dg").datagrid("options").url=url;
 
 			var obj = $(document.forms["filter"]).serialize();
 			
 			$("#dg").datagrid("reload",{param:obj});
-
 		}
 
     </script>
