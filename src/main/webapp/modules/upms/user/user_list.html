@@ -16,7 +16,7 @@
             $dg=$("#dg");
             $dg.datagrid("options").url=$dg.attr("url_");
 			var dgFormData = $(document.forms["dg-form"]).serialize();
-			$("#dg").datagrid("reload",{param:dgFormData});
+			$dg.datagrid("reload",{param:dgFormData});
 		}
 
 		function openAdd() {
