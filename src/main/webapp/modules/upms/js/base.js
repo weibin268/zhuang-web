@@ -1,6 +1,7 @@
 
 var g_settings={
-    apiUrl:"/zhuang-web/upmsapi"
+    apiUrl:"/zhuang-web/upmsapi",
+    basePath:"/modules/upms"
 }
 
 function f_getApiUrl() {
@@ -35,6 +36,14 @@ function f_post(action,data,successHandler) {
                     + textStatus);
             }
         });
+
+}
+
+function f_includeHtmlFile(url) {
+
+    url=f_getApiUrl()+"?action=Template-includeHtml&url="+g_settings.basePath+url;
+
+    document.write("<script src='"+url+"'></script>");
 
 }
 

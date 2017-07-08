@@ -49,7 +49,7 @@ public class TemplateController extends BaseController {
 
 	    String tempString;
 		while ((tempString=bufferedReader.readLine())!=null) {
-			sbHtml.append(tempString+"\n");
+			sbHtml.append(tempString);
 		}
 		
 		bufferedReader.close();
