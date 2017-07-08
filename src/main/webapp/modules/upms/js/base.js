@@ -1,13 +1,13 @@
 
 var g_settings={
-    apiUrl:"/zhuang-web/upmsapi",
-    basePath:"/modules/upms"
+    apiPath:"/zhuang-web/upmsapi",
+    upmsPath:"/modules/upms"
 }
 
 
 function f_post(action,data,successHandler) {
 
-    $.ajax(g_settings.apiUrl+"?action="+action,
+    $.ajax(g_settings.apiPath+"?action="+action,
         {
             type : "POST",
             data : data,
@@ -38,7 +38,7 @@ function f_post(action,data,successHandler) {
 
 function f_includeHtmlFile(url) {
 
-    url=g_settings.apiUrl+"?action=Template-includeHtml&url="+g_settings.basePath+url;
+    url=g_settings.apiPath+"?action=Template-includeHtml&url="+g_settings.upmsPath+url;
 
     document.write("<script src='"+url+"'></script>");
 
@@ -48,7 +48,7 @@ function f_initDatagrid()
 {
     var $datagrid=jQuery(".easyui-datagrid");
 
-    var url=g_settings.apiUrl+"?action=Base-pageList&sql="+$datagrid.attr("sql");
+    var url=g_settings.apiPath+"?action=Base-pageList&sql="+$datagrid.attr("sql");
 
     $datagrid.attr("url_",url);
 }
