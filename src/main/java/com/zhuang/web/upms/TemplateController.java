@@ -43,7 +43,7 @@ public class TemplateController extends BaseController {
 		String realPath =context.getRequest().getSession().getServletContext().getRealPath(url);
 		
 		FileInputStream fileInputStream=new FileInputStream(new File(realPath));
-		InputStreamReader inputStreamReader=new InputStreamReader(fileInputStream);
+		InputStreamReader inputStreamReader=new InputStreamReader(fileInputStream,"utf-8");
 		
 		BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
 
@@ -56,7 +56,12 @@ public class TemplateController extends BaseController {
 		inputStreamReader.close();
 		fileInputStream.close();
 		
+		System.out.println(sbHtml.toString());
+		
 		String content="document.write(\""+sbHtml.toString().replace("\"", "\\\"")+"\")";
+		
+		context.getResponse().setHeader("Content-type", "text/plain;charset=UTF-8");
+		context.getResponse().setCharacterEncoding("UTF-8");
 		context.getResponse().getWriter().append(content);
 		
 		return false;
