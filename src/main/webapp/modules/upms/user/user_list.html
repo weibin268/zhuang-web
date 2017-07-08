@@ -9,12 +9,8 @@
     <script type="text/javascript">
 
         jQuery(function () {
-            doSearch();
-        });
-
-        function doSearch() {
             f_searchDatagrid();
-		}
+        });
 
 		function openAdd(id) {
             url="user_edit.html";
@@ -64,7 +60,7 @@
                 <option value="M">男</option>
                 <option value="F">女</option>
             </select>
-            <a href="javascript:void(0);" onclick="doSearch();" class="easyui-linkbutton" iconcls="icon-search">查询</a>
+            <a href="javascript:void(0);" onclick="f_searchDatagrid();" class="easyui-linkbutton" iconcls="icon-search">查询</a>
         </form>
     </div>
 </div>
