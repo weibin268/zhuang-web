@@ -80,17 +80,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_tab_ref.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_tab_ref.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/upms/js/main_tab_ref.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="27">
+              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/upms/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -174,9 +174,9 @@
         <option value="$PROJECT_DIR$/modules/upms/commons/dialog_part.html" />
         <option value="$PROJECT_DIR$/modules/upms/js/config.js" />
         <option value="$PROJECT_DIR$/modules/upms/user/user_list.html" />
-        <option value="$PROJECT_DIR$/modules/upms/js/main_tab_ref.js" />
         <option value="$PROJECT_DIR$/modules/upms/js/main_ref.js" />
         <option value="$PROJECT_DIR$/modules/upms/js/base.js" />
+        <option value="$PROJECT_DIR$/modules/upms/js/main_tab_ref.js" />
       </list>
     </option>
   </component>
@@ -730,12 +730,12 @@
       <workItem from="1498969798314" duration="20112000" />
       <workItem from="1499005667919" duration="2774000" />
       <workItem from="1499480535807" duration="10886000" />
-      <workItem from="1499504424461" duration="4182000" />
+      <workItem from="1499504424461" duration="4262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44810000" />
+    <option name="totallyTimeSpent" value="44890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1924" height="1030" extended-state="0" />
@@ -1198,14 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/upms/js/main_tab_ref.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/upms/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1216,6 +1208,14 @@
             <element signature="n#!!block;n#f_openDialog#0" expanded="false" />
             <element signature="n#!!block;n#f_closeDialog#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/upms/js/main_tab_ref.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
