@@ -1,5 +1,6 @@
 
 var g_settings={
+    contextPath:"/zhuang-web",
     apiPath:"/zhuang-web/upmsapi",
     upmsPath:"/modules/upms"
 }
@@ -92,8 +93,5 @@ function f_closeDialog(id) {
     jQuery("#dlg" + id).dialog('close');
 }
 
-jQuery(function () {
-    f_initDatagrid();
-});
 
 
