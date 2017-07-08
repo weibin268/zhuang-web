@@ -78,7 +78,7 @@ function f_openDialog(url,option,id) {
         cache: false,
         modal: true,
         maximizable: true,
-        maximized: true,
+        maximized: false,
         resizable: true,
         loadingMessage: "正在加载……",
         href: url,
