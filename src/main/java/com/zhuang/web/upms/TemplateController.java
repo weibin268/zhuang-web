@@ -1,15 +1,10 @@
 package com.zhuang.web.upms;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
-import com.zhuang.web.http.HttpClient;
 import com.zhuang.web.restapi.BaseController;
 import com.zhuang.web.restapi.RestApiContext;
+import com.zhuang.web.util.FileUtil;
 
 public class TemplateController extends BaseController {
 
@@ -32,33 +27,15 @@ public class TemplateController extends BaseController {
 	
 
 
-	public boolean includeHtml(RestApiContext context) throws IOException {
+	public boolean includeHtml(RestApiContext context) throws IOException  {
 
 		String url=context.getRequest().getParameter("url");
 		
-		StringBuilder sbHtml=new StringBuilder();
-
-		HttpClient httpClient=new HttpClient();
-		
 		String realPath =context.getRequest().getSession().getServletContext().getRealPath(url);
 		
-		FileInputStream fileInputStream=new FileInputStream(new File(realPath));
-		InputStreamReader inputStreamReader=new InputStreamReader(fileInputStream,"utf-8");
-		
-		BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
+		String strHtml=FileUtil.readToString(realPath, "utf-8");
 
-	    String tempString;
-		while ((tempString=bufferedReader.readLine())!=null) {
-			sbHtml.append(tempString);
-		}
-		
-		bufferedReader.close();
-		inputStreamReader.close();
-		fileInputStream.close();
-		
-		System.out.println(sbHtml.toString());
-		
-		String content="document.write(\""+sbHtml.toString().replace("\"", "\\\"")+"\")";
+		String content="document.write(\""+strHtml.replace("\"", "\\\"")+"\")";
 		
 		context.getResponse().setHeader("Content-type", "text/plain;charset=UTF-8");
 		context.getResponse().setCharacterEncoding("UTF-8");
