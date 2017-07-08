@@ -33,7 +33,7 @@ public class TemplateController extends BaseController {
 		
 		String realPath =context.getRequest().getSession().getServletContext().getRealPath(url);
 		
-		String strHtml=FileUtil.readToString(realPath, "utf-8");
+		String strHtml=FileUtil.readHtmlInOneLine(realPath, "utf-8");
 
 		String content="document.write(\""+strHtml.replace("\"", "\\\"")+"\")";
 		

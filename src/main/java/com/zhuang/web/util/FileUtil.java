@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class FileUtil {
-	public static String readToString(String filePath, String charsetName) {
+	public static String readHtmlInOneLine(String filePath, String charsetName) {
 
 		StringBuilder stringBuilder = new StringBuilder();
 
