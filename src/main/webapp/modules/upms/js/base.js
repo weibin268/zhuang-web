@@ -4,13 +4,10 @@ var g_settings={
     basePath:"/modules/upms"
 }
 
-function f_getApiUrl() {
-    return g_settings.apiUrl;
-}
 
 function f_post(action,data,successHandler) {
 
-    $.ajax(f_getApiUrl()+"?action="+action,
+    $.ajax(g_settings.apiUrl+"?action="+action,
         {
             type : "POST",
             data : data,
@@ -41,7 +38,7 @@ function f_post(action,data,successHandler) {
 
 function f_includeHtmlFile(url) {
 
-    url=f_getApiUrl()+"?action=Template-includeHtml&url="+g_settings.basePath+url;
+    url=g_settings.apiUrl+"?action=Template-includeHtml&url="+g_settings.basePath+url;
 
     document.write("<script src='"+url+"'></script>");
 
@@ -51,9 +48,8 @@ function f_initDatagrid()
 {
     var $datagrid=jQuery(".easyui-datagrid");
 
-    var url=f_getApiUrl()+"?action=Base-pageList&sql="+$datagrid.attr("sql");
+    var url=g_settings.apiUrl+"?action=Base-pageList&sql="+$datagrid.attr("sql");
 
-    //$datagrid.attr("url",url);
     $datagrid.attr("url_",url);
 }
 
