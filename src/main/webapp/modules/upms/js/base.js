@@ -48,6 +48,45 @@ function f_initDatagrid()
     $datagrid.attr("url_",url);
 }
 
+function f_searchDatagrid(dgId,dgFormName) {
+
+    dgId=dgId||"dg";
+    dgFormName=dgFormName||"dg-form";
+    $dg=$("#"+dgId);
+    $dg.datagrid("options").url=$dg.attr("url_");
+    var dgFormData = $(document.forms[dgFormName]).serialize();
+    $dg.datagrid("reload",{param:dgFormData});
+
+}
+
+function f_openDialog(url,option,id) {
+
+    id=id||1;
+    option=option||{};
+
+    jQuery("#dlg"+id).dialog($.extend({
+        title: ' ',
+        width: 700,
+        height: 400,
+        closed: false,
+        cache: false,
+        modal: true,
+        maximizable: true,
+        maximized: true,
+        resizable: true,
+        loadingMessage: "正在加载……",
+        href: url,
+        //content: content,
+        buttons: "#dlgButtonSaveCancel"
+    }, option));
+
+}
+
+function f_closeDialog(id) {
+    id=id||1;
+    jQuery("#dlg" + id).dialog('close');
+}
+
 jQuery(function () {
     f_initDatagrid();
 });
