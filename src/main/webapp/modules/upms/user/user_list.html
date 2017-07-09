@@ -15,7 +15,7 @@
 
 		function openAdd(id) {
             url="user_edit.html";
-            f_openDialog(url,{});
+            f_openDialog(url,{maximized:false});
         }
 
         function openEdit() {
@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<table id="dg" class="easyui-datagrid" style="width:100%;height:500px;"
+<table id="dg" class="easyui-datagrid" style="width:100%;height:500px;display: none;"
        sql="com.zhuang.upms.sqlxml.SysUser.selectPage"
        rownumbers="true" pagination="true"
        toolbar="#dg-toolbar">
